@@ -1,0 +1,6 @@
+﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput.TextInputModel;
+
+
+@Html.Raw(Model.ChildContent)
+<input class="govuk-input @(Model.HasError?"govuk-input--error":"") @Model.AdditionalClass"
+       id="@Model.Id" name="@Model.Id" type="text" aria-describedby="@Model.Id-hint">

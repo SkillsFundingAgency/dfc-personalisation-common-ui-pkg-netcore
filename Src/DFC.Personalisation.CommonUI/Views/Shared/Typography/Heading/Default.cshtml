@@ -1,0 +1,7 @@
+﻿@model DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading.HeadingModel
+
+@if (!string.IsNullOrWhiteSpace(Model.Caption))
+{
+    <span class="govuk-caption-@Model.Size">@Model.Caption</span>
+}
+<@Model.Tag class="govuk-heading-@Model.Size">@Model.Text</@Model.Tag>
