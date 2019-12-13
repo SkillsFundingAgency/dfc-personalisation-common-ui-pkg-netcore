@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Dfc.Personalisation.CommonUI.Documentation\DFC.Personalisation.CommonUI.Documentation.csproj" />
+    <ProjectReference Include="..\DFC.Personalisation.CommonUI.Documentation\DFC.Personalisation.CommonUI.Documentation.csproj" />
   </ItemGroup>
 
 </Project>
