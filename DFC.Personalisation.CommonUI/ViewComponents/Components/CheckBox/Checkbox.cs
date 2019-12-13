@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DFC.Personalisation.CommonUI.TagHelpers;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
 {

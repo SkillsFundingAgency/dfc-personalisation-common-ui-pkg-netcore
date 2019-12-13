@@ -32,16 +32,10 @@ namespace DFC.Personalisation.CommonUI.ViewComponents
                     }
                     catch
                     {
-
+                        throw new Exception("Unable to Map property");
                     }
                 }
             }
-        }
-
-        private bool HasMethod(object objectToCheck, string propertyName)
-        {
-            var type = objectToCheck.GetType();
-            return type.GetProperty(propertyName) != null;
         }
     }
 }
