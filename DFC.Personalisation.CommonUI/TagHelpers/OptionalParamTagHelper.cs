@@ -15,7 +15,7 @@ namespace DFC.Personalisation.CommonUI.TagHelpers
     {
         private readonly IViewComponentHelper _viewComponentHelper;
 
-        public OptionalParamTagHelper(IViewComponentHelper viewComponentHelper)
+        protected OptionalParamTagHelper(IViewComponentHelper viewComponentHelper)
         {
             _viewComponentHelper = viewComponentHelper;
         }

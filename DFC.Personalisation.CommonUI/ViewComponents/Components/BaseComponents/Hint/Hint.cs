@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DFC.Personalisation.CommonUI.TagHelpers;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Hint
 {
     [HtmlTargetElement("govukHint", ParentTag = "govukTextInput")]
     public class HintTagHelper : OptionalParamTagHelper
     {
-        private readonly IViewComponentHelper _viewComponentHelper;
-
         public HintTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
-            _viewComponentHelper = viewComponentHelper;
         }
     }
 

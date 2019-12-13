@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DFC.Personalisation.CommonUI.TagHelpers;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
 {
@@ -20,7 +18,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
         private readonly string _additionalClass;
         private readonly string viewName;
 
-        public string Url { get; set; }
+        public string Href { get; set; }
         public string Text { get; set; }
         public string Title { get; set; }
         public string TabIndex { get; set; }
@@ -39,7 +37,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
             {
                 Text = this.Text,
                 AdditionalClass = this._additionalClass,
-                Url = this.Url,
+                Href = this.Href,
                 Title = this.Title,
                 TabIndex = this.TabIndex
 
