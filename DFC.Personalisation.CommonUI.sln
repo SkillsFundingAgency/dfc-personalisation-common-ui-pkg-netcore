@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI", "Src\DFC.Personalisation.CommonUI\DFC.Personalisation.CommonUI.csproj", "{0F7000CE-587F-4F8B-9865-FB5AB53D827E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI", "DFC.Personalisation.CommonUI\DFC.Personalisation.CommonUI.csproj", "{0F7000CE-587F-4F8B-9865-FB5AB53D827E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI.UnitTests", "Test\DFC.Personalisation.CommonUI.UnitTests\DFC.Personalisation.CommonUI.UnitTests.csproj", "{4FE1F0FC-B4E8-4ECB-87B0-8D10DC7CF34B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI.UnitTests", "DFC.Personalisation.CommonUI.UnitTests\DFC.Personalisation.CommonUI.UnitTests.csproj", "{4FE1F0FC-B4E8-4ECB-87B0-8D10DC7CF34B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1091EC7C-6A10-4EEF-BE45-0885308DC31E}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,9 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{95252BBC-AD5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{ECA9193C-8044-4AE8-867C-C8BFACA041C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI.Documentation", "Src\DFC.Personalisation.CommonUI.Documentation\DFC.Personalisation.CommonUI.Documentation.csproj", "{A9B9A693-55DC-4D49-A59B-6A0F46E1E24B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI.Documentation", "DFC.Personalisation.CommonUI.Documentation\DFC.Personalisation.CommonUI.Documentation.csproj", "{A9B9A693-55DC-4D49-A59B-6A0F46E1E24B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI.Documentation.Test", "Test\DFC.Personalisation.CommonUI.Documentation.Test\DFC.Personalisation.CommonUI.Documentation.Test.csproj", "{EFD5BB47-FCD1-4F9F-99C3-E856C1D34AC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.Personalisation.CommonUI.Documentation.Test", "DFC.Personalisation.CommonUI.Documentation.Test\DFC.Personalisation.CommonUI.Documentation.Test.csproj", "{EFD5BB47-FCD1-4F9F-99C3-E856C1D34AC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
