@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <ProjectGuid>{4FE1F0FC-B4E8-4ECB-87B0-8D10DC7CF34B}</ProjectGuid>
   </PropertyGroup>
@@ -11,5 +11,6 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DFC.Personalisation.CommonUI\DFC.Personalisation.CommonUI.csproj" />
   </ItemGroup>
 </Project>

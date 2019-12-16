@@ -18,10 +18,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
         private readonly string _additionalClass;
         private readonly string viewName;
 
-        public string Href { get; set; }
-        public string Text { get; set; }
-        public string Title { get; set; }
-        public string TabIndex { get; set; }
+        public string LinkHref { get; set; }
+        public string LinkText { get; set; }
+        public string LinkTitle { get; set; }
+        public int LinkTabIndex { get; set; }
+        public string Class { get; set; }
+        public string Id { get; set; }
 
         public Link(string additionalButtonCSS = null, string viewName = "Default.cshtml")
         {
@@ -35,11 +37,13 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
 
             var model = new LinkModel()
             {
-                Text = this.Text,
-                AdditionalClass = this._additionalClass,
-                Href = this.Href,
-                Title = this.Title,
-                TabIndex = this.TabIndex
+                LinkText = LinkText,
+                AdditionalClass = _additionalClass,
+                LinkHref = LinkHref,
+                LinkTitle = LinkTitle,
+                LinkTabIndex = LinkTabIndex,
+                Id = Id,
+                Class = Class
 
             };
             return View($"/Views/Shared/Components/BaseComponents/Link/{this.viewName}", model);

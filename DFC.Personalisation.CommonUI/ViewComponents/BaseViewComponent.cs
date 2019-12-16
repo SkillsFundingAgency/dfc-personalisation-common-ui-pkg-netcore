@@ -20,10 +20,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents
                         if (prop.PropertyType == typeof(bool))
                         {
                             prop.SetValue(this, Convert.ToBoolean(val));
+                            continue;
                         }
                         if (prop.PropertyType == typeof(int))
                         {
                             prop.SetValue(this, Convert.ToInt32(val));
+                            continue;
                         }
                         else
                         {
