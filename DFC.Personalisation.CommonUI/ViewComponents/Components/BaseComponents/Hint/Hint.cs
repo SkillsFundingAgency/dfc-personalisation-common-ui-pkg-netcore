@@ -18,7 +18,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
         private readonly string _additionalCss;
         private readonly string viewName;
 
-        public string Text { get; set; }
+        public string HintText { get; set; }
 
         public Hint(string additionalCss = null, string viewName = "Default.cshtml")
         {
@@ -32,7 +32,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
 
             var model = new HintModel()
             {
-                HintText = Text,
+                HintText = HintText,
                 AdditionalClass = this._additionalCss,
             };
             return View($"/Views/Shared/Components/BaseComponents/Hint/{this.viewName}", model);

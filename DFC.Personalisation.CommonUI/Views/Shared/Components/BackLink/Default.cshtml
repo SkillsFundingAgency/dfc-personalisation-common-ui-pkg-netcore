@@ -4,11 +4,11 @@
 
 @await Component.InvokeAsync(nameof(Link), new LinkModel
 {
-    Href = @Model.Url,
-    Title = @Model.Title,
+    LinkHref = @Model.LinkHref,
+    LinkTitle = @Model.LinkTitle,
     AdditionalClass = @Model.AdditionalClass,
-    Text = @Model.Text,
+    LinkText = @Model.LinkText,
     Class = "govuk-back-link",
-    TabIndex = @Model.TabIndex,
+    LinkTabIndex = @Model.LinkTabIndex,
     Id = @Model.Id
 })

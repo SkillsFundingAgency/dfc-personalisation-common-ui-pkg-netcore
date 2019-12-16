@@ -21,8 +21,11 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BackLink
         private readonly string additionalButtonCSS;
         private readonly string viewName;
 
-        public string Text { get; set; }
-        public bool Disabled { get; set; }
+        public string Id { get; set; }
+        public string LinkHref { get; set; }
+        public string LinkText { get; set; }
+        public string LinkTitle { get; set; }
+        public int LinkTabIndex { get; set; }
 
         public BackLink(string additionalButtonCSS = null, string viewName = "Default.cshtml")
         {
@@ -36,10 +39,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BackLink
 
             var model = new BackLinkModel()
             {
-                LinkText = this.Text,
-                AdditionalClass = this.additionalButtonCSS,
-                Href = "",
-                LinkTitle = ""
+                LinkText = LinkText,
+                AdditionalClass = additionalButtonCSS,
+                LinkHref = LinkHref,
+                LinkTitle = LinkTitle,
+                Id = Id,
+                LinkTabIndex = LinkTabIndex,
             };
             return View($"/Views/Shared/Components/BackLink/{this.viewName}", model);
         }

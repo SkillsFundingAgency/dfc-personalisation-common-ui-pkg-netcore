@@ -2,9 +2,9 @@
 {
     public interface ILink
     {
-        string Href { get; set; }
-        string Text { get; set; }
-        string Title { get; set; }
-        string TabIndex { get; set; }
+        string LinkHref { get; set; }
+        string LinkText { get; set; }
+        string LinkTitle { get; set; }
+        int LinkTabIndex { get; set; }
     }
 }

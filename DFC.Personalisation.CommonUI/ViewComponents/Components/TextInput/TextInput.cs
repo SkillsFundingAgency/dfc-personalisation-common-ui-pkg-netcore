@@ -46,6 +46,10 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
     {
         private readonly string _additionalCss;
         private readonly string viewName;
+
+        public string Id { get; set; }
+        public string HintText { get; set; }
+        public string ErrorMessage { get; set; }
         public string ChildContent { get; set; }
         public bool HasError { get; set; }
 
@@ -61,9 +65,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 
             var model = new TextInputModel()
             {
-                AdditionalClass = this._additionalCss,
-                ChildContent = this.ChildContent,
-                HasError = HasError
+                AdditionalClass = _additionalCss,
+                ChildContent = ChildContent,
+                HasError = HasError,
+                Id = Id,
+                HintText = HintText,
+                ErrorMessage = ErrorMessage
             };
             return View($"/Views/Shared/Components/TextInput/{this.viewName}", model);
         }
