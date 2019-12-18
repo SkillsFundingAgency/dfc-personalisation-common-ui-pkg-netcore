@@ -6,6 +6,6 @@ For shared/resuable non-UI code see [DFC-personalisation-common-pkg-netcore](DFC
 
 ## Build & Deployment Piplelines
 
-| | Dev | Master
---- | --- | ---
-Build | dev badge tbc | master badge tbc
+| | Dev | Master | Sonar (Master)
+--- | --- | --- | ---
+Build | [![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_apis/build/status/Personalisation/dfc-personalisation-common-ui-pkg-netcore?branchName=dev)](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build/latest?definitionId=1926&branchName=dev) | [![Build Status](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_apis/build/status/Personalisation/dfc-personalisation-common-ui-pkg-netcore?branchName=master)](https://sfa-gov-uk.visualstudio.com/Digital%20First%20Careers/_build/latest?definitionId=1926&branchName=master) | sonar badge
