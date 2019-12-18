@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Active Route";
+}
+
+@section LeftNav
+{
+    <partial name="_HelpersLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="Active route taghelper" caption="Helpers"></govukHeadingH1>
+    </div>
+
+    <div class="app-example-wrapper">
+        <div class="app-example">
+            <div class="app-example__frame">
+                <div class="app-example-page">
+
+
+                    <ul class="app-subnav__section">
+
+                        <li class="app-subnav__section-item" is-active-route active-route-class="app-subnav__section-item--current" asp-controller="Helpers" asp-action="Stylesheet">
+                            <a class="app-subnav__link govuk-link govuk-link--no-visited-state" asp-controller="Helpers" asp-action="Stylesheet">Inactive menu option</a>
+                        </li>
+                        <li class="app-subnav__section-item" is-active-route active-route-class="app-subnav__section-item--current" asp-controller="Helpers" asp-action="ActiveRoute">
+                            <a class="app-subnav__link govuk-link govuk-link--no-visited-state" asp-controller="Helpers" asp-action="ActiveRoute">Active menu option</a>
+                        </li>
+                        <li class="app-subnav__section-item" is-active-route active-route-class="app-subnav__section-item--current" asp-controller="Helpers" asp-action="Stylesheet">
+                            <a class="app-subnav__link govuk-link govuk-link--no-visited-state" asp-controller="Helpers" asp-action="Stylesheet">Inactive menu option</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p class="govuk-body">The active route taghelper adds a CSS class to an element if the route specified in the taghelper matches the currently active MVC route.</p>
+        <govukHeadingH2 text="Usage"></govukHeadingH2>
+        <p class="govuk-body">Make sure _Viewimports includes <pre><code>@@addTagHelper *, DFC.GdsRazor</code></pre>.</p>
+        <p class="govuk-body">
+            For any element that you want to add the indicator to:
+            <ul>
+                <li>Add an <pre><code>is-active-route</code></pre> attribute.</li>
+                <li>Add an <pre><code>asp-controller</code></pre> attribute containing the name of the controller which has the active action.</li>
+                <li>Optionally, add an <pre><code>asp-action</code></pre> attribute containing the name of the active action. This allows the possibilty of creating "section" logic - where an element remains indicated as the active route whilst you are within a section, for example with menus.</li>
+                <li>Optionally, add an <pre><code>active-route-class</code></pre> attribute with the name of the CSS class to use as the indicator.</li>
+            </ul>
+        </p>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new { title = "Example", exampleCode = "<li class=\"app-subnav__section-item\"" + Environment.NewLine + "    is-active-route" + Environment.NewLine + "    active-route-class=\"app-subnav__section-item--current\"" + Environment.NewLine + "    asp-controller=\"Helpers\" asp-action=\"ActiveRoute\">" + Environment.NewLine + "    <a class=\"app-subnav__link govuk-link govuk-link--no-visited-state\"" + Environment.NewLine + "    asp-controller=\"Helpers\" asp-action=\"ActiveRoute\">" + Environment.NewLine + "    Active route taghelper" + Environment.NewLine + "    </a>" + Environment.NewLine + "</li>" })
+
+
+</main>
+

@@ -1,0 +1,26 @@
+﻿@model DFC.Personalisation.CommonUI.Documentation.ViewComponents.ExampleSectionModel
+
+@if (!string.IsNullOrWhiteSpace(Model.Title))
+{
+    <govukHeadingH2 text="@Model.Title"></govukHeadingH2>
+}
+<div class="app-example-wrapper">
+    @if (!string.IsNullOrWhiteSpace(Model.ComponentName))
+    {
+        <div class="app-example">
+            <div class="app-example__frame">
+                <div class="app-example-page">
+                    @await Component.InvokeAsync(Model.ComponentName, Model.ComponentArgs)
+                </div>
+            </div>
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.ExampleCode))
+    {
+        <div class="app-example">
+            <div class="app-example-code">
+                @await Component.InvokeAsync("SourceCodeExample", new { code = Model.ExampleCode })
+            </div>
+        </div>
+    }
+</div>

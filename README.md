@@ -1,5 +1,11 @@
-# dfc-personalisation-common-ui-pkg-netcore
+# DFC-personalisation-common-ui-pkg-netcore
 
-## Introduction
+A Nuget package for shared/re-usable ui code which follows GDS standards, within the NCS Personalisation project.
 
-An introduction to the project goes here!
+For shared/resuable non-UI code see [DFC-personalisation-common-pkg-netcore](DFC-personalisation-common-pkg-netcore).
+
+## Build & Deployment Piplelines
+
+| | Dev | Master
+--- | --- | ---
+Build | dev badge tbc | master badge tbc

@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "TextInput";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="Text Input" caption="Components"></govukHeadingH1>
+    </div>
+
+
+    <govukTextInput HasError="True">
+        <govukHint Text="test"></govukHint>
+        <govukError Id="TextInputError" Text="Error"></govukError>
+    </govukTextInput>
+
+
+</main>

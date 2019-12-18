@@ -1,0 +1,55 @@
+﻿<header class="govuk-header app-header" role="banner" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container app-header__container">
+        <div class="govuk-header__logo app-header__logo">
+            <a asp-controller="Home" asp-action="Index" class="govuk-header__link govuk-header__link--homepage">
+                <span class="govuk-header__logotype">
+                    <span class="govuk-header__logotype-text">
+                        GDS
+                    </span>
+                </span>
+                <span class="govuk-header__product-name">
+                    Razor Class Library
+                </span>
+            </a>
+        </div>
+
+        <div class="govuk-header__content">
+            <a asp-controller="Home" asp-action="Index" class="govuk-header__link govuk-header__link--service-name">
+                Documentation
+            </a>
+            <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+            <nav>
+                <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
+                    <li class="govuk-header__navigation-item" is-active-route active-route-class="govuk-header__navigation-item--active" asp-controller="Home">
+                        <a class="govuk-header__link" asp-controller="Home" asp-action="Index">
+                            Getting started
+                        </a>
+                    </li>
+                    <li class="govuk-header__navigation-item" is-active-route active-route-class="govuk-header__navigation-item--active" asp-controller="Styles">
+                        <a class="govuk-header__link" asp-controller="Styles" asp-action="Index">
+                            Styles
+                        </a>
+                    </li>
+                    <li class="govuk-header__navigation-item" is-active-route active-route-class="govuk-header__navigation-item--active" asp-controller="Components">
+                        <a class="govuk-header__link" asp-controller="Components" asp-action="Index">
+                            Components
+                        </a>
+                    </li>
+                    <li class="govuk-header__navigation-item" is-active-route active-route-class="govuk-header__navigation-item--active" asp-controller="Helpers">
+                        <a class="govuk-header__link" asp-controller="Helpers" asp-action="Index">
+                            Helpers
+                        </a>
+                    </li>
+                    <li class="govuk-header__navigation-item" is-active-route active-route-class="govuk-header__navigation-item--active" asp-controller="Patterns">
+                        <a class="govuk-header__link" asp-controller="Patterns" asp-action="Index">
+                            Patterns
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+    </div>
+</header>
