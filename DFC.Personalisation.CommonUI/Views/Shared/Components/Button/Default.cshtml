@@ -1,0 +1,5 @@
+﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.Button.ButtonModel
+
+<button class="govuk-button @Model.AdditionalClass @(Model.Disabled ? "govuk-button--disabled" : "")" @(Model.Disabled ? "disabled=disabled aria-disabled=true" : "") data-module="govuk-button">
+    @Model.Text
+</button>

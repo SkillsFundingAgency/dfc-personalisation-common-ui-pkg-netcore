@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Button";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="Button" caption="Components"></govukHeadingH1>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new { componentName = "Button", componentArgs = new Dictionary<string, string>() { { "Text", "Save and continue" } } })
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new { title = "Default button", exampleCode = "<govukButton text=\"Save and continue\"></govukButton>", componentName = "Button", componentArgs = new Dictionary<string, string>() { { "Text", "Save and continue" } } })
+
+    @await Component.InvokeAsync("ExampleSection", new { title = "Start button", exampleCode = "<govukStartButton text=\"Start now\"></govukStartButton>", componentName = "StartButton", componentArgs = new Dictionary<string, string>() { { "Text", "Start now" } } })
+
+    @await Component.InvokeAsync("ExampleSection", new { title = "Secondary button", exampleCode = "<govukSecondaryButton text=\"Find address\"></govukSecondaryButton>", componentName = "SecondaryButton", componentArgs = new Dictionary<string, string>() { { "Text", "Find address" } } })
+
+    @await Component.InvokeAsync("ExampleSection", new { title = "Warning button", exampleCode = "<govukWarningButton text=\"Delete account\"></govukWarningButton>", componentName = "WarningButton", componentArgs = new Dictionary<string, string>() { { "Text", "Delete account" } } })
+
+    @await Component.InvokeAsync("ExampleSection", new { title = "Disabled button", exampleCode = "<govukButton text=\"Disabled button\" disabled=\"true\"></govukButton>", componentName = "Button", componentArgs = new Dictionary<string, string>() { { "Text", "Save and continue" }, { "Disabled", "true" } } })
+    <p class="govuk-body">Add the <pre><code>disabled="true"</code></pre> attribute to any of the govuk buttons to render them in disabled mode.</p>
+</main>

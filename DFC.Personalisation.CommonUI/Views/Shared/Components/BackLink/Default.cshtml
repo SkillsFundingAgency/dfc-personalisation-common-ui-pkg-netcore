@@ -1,0 +1,14 @@
+﻿@using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
+@model DFC.Personalisation.CommonUI.ViewComponents.Components.BackLink.BackLinkModel
+
+
+@await Component.InvokeAsync(nameof(Link), new LinkModel
+{
+    LinkHref = @Model.LinkHref,
+    LinkTitle = @Model.LinkTitle,
+    AdditionalClass = @Model.AdditionalClass,
+    LinkText = @Model.LinkText,
+    Class = "govuk-back-link",
+    LinkTabIndex = @Model.LinkTabIndex,
+    Id = @Model.Id
+})

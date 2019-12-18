@@ -1,0 +1,152 @@
+﻿.app-html-class {
+
+}
+
+
+.app-body-class {
+
+}
+
+
+.app-header {
+
+}
+
+
+.app-header__container {
+
+
+}
+
+
+.app-header__logo {
+}
+
+
+.app-container {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+
+.app-subnav__section {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style-type: none
+}
+
+.app-subnav__link {
+    padding: 2px 0;
+    text-decoration: none
+}
+
+.app-subnav__link:not(:focus):hover {
+    color: #1d70b8;
+    text-decoration: underline
+}
+
+.app-subnav__section-item {
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+.app-subnav__section-item--current {
+    margin-left: -14px;
+    padding-left: 10px;
+    border-left: 4px solid #1d70b8;
+    background-color: #fff
+}
+
+.app-subnav__section-item--current .app-subnav__link {
+    font-weight: bold
+}
+
+.app-subnav__section--nested {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-left: 20px
+}
+
+.app-subnav__section--nested .app-subnav__section-item::before {
+    content: "—";
+    margin-left: -20px;
+    color: #6f777b
+}
+
+.app-subnav__section--nested .app-subnav__link {
+    padding-left: 0;
+    font-weight: normal
+}
+
+
+.app-example-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "GDS Transport",Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25
+}
+
+@media (min-width: 40.0625em) {
+  .app-example-wrapper {
+    margin-top: 30px
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-example-wrapper {
+    margin-bottom: 30px
+  }
+}
+
+@media print {
+  .app-example-wrapper {
+    font-family: sans-serif
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-example-wrapper {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579
+  }
+}
+
+@media print {
+  .app-example-wrapper {
+    font-size: 14pt;
+    line-height: 1.15
+  }
+}
+
+.app-example {
+  position: relative;
+  border: 1px solid #b1b4b6;
+  background: #f3f2f1
+}
+
+.app-example__frame {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  border-right: 1px solid #b1b4b6;
+  background: #fff
+}
+
+.app-example-page {
+  padding: 60px 30px 30px
+}
+
+
+.app-example-code {
+  padding: 30px 30px 30px
+}
+
+
