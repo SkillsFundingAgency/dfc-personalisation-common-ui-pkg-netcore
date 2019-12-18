@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+using NSubstitute;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 {
@@ -27,5 +30,13 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
              Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
+        [Test]
+        public async Task WhenBackLinkTagHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new BackLinkTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("BackLink", tagHelper, componentTag);
+        }
     }
 }

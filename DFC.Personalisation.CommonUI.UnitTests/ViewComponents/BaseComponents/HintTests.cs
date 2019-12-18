@@ -1,7 +1,9 @@
 ﻿using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Hint;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
+using NSubstitute;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 {
@@ -20,6 +22,15 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 
             //Assert
             Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+        [Test]
+        public async Task WhenHintTagHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new HintTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("Hint", tagHelper, componentTag);
         }
     }
 }

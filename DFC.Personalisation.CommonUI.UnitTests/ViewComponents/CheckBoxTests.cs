@@ -1,7 +1,10 @@
-﻿using DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox;
+﻿using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+using DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
+using NSubstitute;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 {
@@ -24,6 +27,15 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             //Assert
             Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+        [Test]
+        public async Task WhenCheckBoxHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new CheckboxTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("Checkbox", tagHelper, componentTag);
         }
     }
 }

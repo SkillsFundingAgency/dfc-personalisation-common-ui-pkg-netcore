@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+using NSubstitute;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.Typography
 {
@@ -65,6 +68,42 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
 
             //Assert
             Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+        [Test]
+        public async Task WhenHeadingHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new HeadingTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("Heading", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenHeadingH2HelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new HeadingH2TagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("HeadingH2", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenHeadingH3HelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new HeadingH3TagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("HeadingH3", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenHeadingH4HelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new HeadingH4TagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("HeadingH4", tagHelper, componentTag);
         }
     }
 }
