@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+using NSubstitute;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 {
@@ -61,6 +64,42 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             //Assert
             Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+        [Test]
+        public async Task WhenButtonHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new ButtonTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("Button", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenStartButtonHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new StartButtonTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("StartButton", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenSecondaryButtonHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new SecondaryButtonTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("SecondaryButton", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenWarningButtonHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new WarningButtonTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("WarningButton", tagHelper, componentTag);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
 {
-    [HtmlTargetElement("govukCheckBox")]
+    [HtmlTargetElement("govukCheckbox")]
    public class CheckboxTagHelper : OptionalParamTagHelper
     {
         public CheckboxTagHelper(IViewComponentHelper viewComponentHelper)
