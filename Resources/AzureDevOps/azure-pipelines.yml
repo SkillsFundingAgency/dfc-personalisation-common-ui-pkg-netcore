@@ -30,6 +30,11 @@ stages:
         BuildPlatform: 'any cpu'
         BuildConfiguration: 'release'
         TestSuffix: UnitTests
+
+    - task: NuGetToolInstaller@1
+      inputs:
+        versionSpec: '>=5.4.0'
+
     - task: NuGetCommand@2
       displayName: 'NuGet pack'
       inputs:
