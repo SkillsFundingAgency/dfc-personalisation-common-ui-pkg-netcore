@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using DFC.Personalisation.CommonUI.TagHelpers;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 {
@@ -19,26 +18,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            ((IViewContextAware)_viewComponentHelper).Contextualize(ViewContext);
-
-            var taghelpername = this.GetType().Name;
-            var name = taghelpername.Replace("TagHelper", "");
-            var options = new Dictionary<string, string>();
-
-            foreach (var attr in context.AllAttributes)
-            {
-                options.Add(attr.Name, attr.Value.ToString());
-            }
-
-            if (string.IsNullOrWhiteSpace(name)) { output.SuppressOutput(); return; }
-
-            var children = await output.GetChildContentAsync();
-
-            options.Add(nameof(TextInputModel.ChildContent),children.GetContent());
-
-            var content = await _viewComponentHelper.InvokeAsync(name, options);
-            output.TagName = null; // prevents taghelper tags being rendered in the final HTML
-            output.Content.SetHtmlContent(content);
+            await ProcessAsyncWithChildren(context, output, nameof(TextInputModel.ChildContent));
         }
     }
 
