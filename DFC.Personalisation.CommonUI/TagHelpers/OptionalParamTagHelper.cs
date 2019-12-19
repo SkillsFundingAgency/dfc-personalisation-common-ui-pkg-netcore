@@ -26,19 +26,45 @@ namespace DFC.Personalisation.CommonUI.TagHelpers
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            ((IViewContextAware)_viewComponentHelper).Contextualize(ViewContext);
+            var name = GetTagName();
+            var options = GetOptions(context);
+            await SetHtmlContent(output, name, options);
+        }
 
+        public virtual async Task ProcessAsyncWithChildren(TagHelperContext context, TagHelperOutput output, string childContentName)
+        {
+            var name = GetTagName();
+            var options = GetOptions(context);
+            var children = await output.GetChildContentAsync();
+
+            options.Add(childContentName, children.GetContent());
+
+            await SetHtmlContent(output, name, options);
+        }
+
+
+        private string GetTagName()
+        {
             var taghelpername = this.GetType().Name;
-            var name = taghelpername.Replace("TagHelper", "");
-            var options = new Dictionary<string,string>();
+            return taghelpername.Replace("TagHelper", "");
+
+        }
+
+        private Dictionary<string,string> GetOptions(TagHelperContext context)
+        {
+            var options = new Dictionary<string, string>();
 
             foreach (var attr in context.AllAttributes)
             {
                 options.Add(attr.Name, attr.Value.ToString());
             }
 
-            if (string.IsNullOrWhiteSpace(name)) { output.SuppressOutput(); return; }
+            return options;
+        }
 
+        private async Task SetHtmlContent(TagHelperOutput output, string name, Dictionary<string,string> options)
+        {
+            ((IViewContextAware)_viewComponentHelper).Contextualize(ViewContext);
             var content = await _viewComponentHelper.InvokeAsync(name, options);
             output.TagName = null; // prevents taghelper tags being rendered in the final HTML
             output.Content.SetHtmlContent(content);
