@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "RadioButton";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="Button" caption="Components"></govukHeadingH1>
+    </div>
+    @*@await Component.InvokeAsync("RadioButton", new
+        {
+            title = "Radio button",
+        exampleCode = "<govukTextInput></govukTextInput>",
+        componentName = "RadioButton",
+            componentArgs = new Dictionary<string, string>() { { "Text", "Save and continue"},
+                {"ChildContent","<label class=\"govuk-label\" for=\"test\">\r\n    test\r\n</label>"} }
+        })*@
+
+    @await Component.InvokeAsync("ExampleSection", new
+{
+    title = "Text Input",
+    exampleCode = "<govukRadioButton Id=\"test\" value=\"yes\"><govukLabel Text=\"test\" For=\"test\"></govukLabel></govukRadioButton>",
+    componentName = "RadioButton",
+    componentArgs = new Dictionary<string, string>() {
+        {"Id","TestBox"},
+        {"ChildContent","<label class=\"govuk-label\" for=\"TestBox\">\r\n    test\r\n</label>"},
+        {"Value","Yes" }
+    }
+})
+
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
+
+    <p class="govuk-body">Add the <pre><code>Id="{Value}"</code></pre> attribute to set the id property of the component</p>
+    <p class="govuk-body">Add the <pre><code>value="{value}"</code></pre> attribute to set the value of the radio button</p>
+</main>
