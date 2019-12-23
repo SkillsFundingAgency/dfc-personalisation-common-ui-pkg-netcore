@@ -14,10 +14,58 @@
     </div>
 
 
-    <govukTextInput HasError="True">
-        <govukHint HintText="test"></govukHint>
-        <govukError Id="TextInputError" Text="Error"></govukError>
-    </govukTextInput>
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "Text Input",
+        exampleCode = "<govukTextInput></govukTextInput>",
+        componentName = "TextInput",
+        componentArgs = new Dictionary<string, string>()
+    })
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
 
 
+
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "Text Input with error",
+        exampleCode = "<govukTextInput>" +
+                                                                                                        "\n<govukError Id=\"TextInputError\" Text=\"Error\"></govukError>" +
+                                                                                                        "\n</govukTextInput>",
+        componentName = "TextInput",
+        componentArgs = new Dictionary<string, string>() { { "Text", "Start now" },
+            {"ChildContent","<span id=\"TextInputError\" class=\"govuk-error-message\">\r\n<span class=\"govuk-visually-hidden\">Error:</span>Error\r\n</span>"},
+            {"HasError","True"} }
+    })
+
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "Text Input with hint",
+    exampleCode = "<govukTextInput>\n<govukHint HintText=\"test\">" +
+                      "</govukHint>\n</govukTextInput>",
+    componentName = "TextInput",
+        componentArgs = new Dictionary<string, string>() { { "Text", "Find address" },
+        { "ChildContent","<span id=\"event-name-hint\" class=\"govuk-hint\">\r\n    test\r\n</span>"} }
+    })
+
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "Text Input with error and hint",
+        exampleCode = "<govukTextInput>" +
+                      "\n<govukHint HintText=\"test\"></govukHint>" +
+                      "\n<govukError Id=\"TextInputError\" Text=\"Error\"></govukError>" +
+                      "\n</govukTextInput>",
+        componentName = "TextInput",
+        componentArgs = new Dictionary<string, string>()
+        {
+            { "Text", "Delete account" },
+            {"ChildContent","<span id=\"event-name-hint\" class=\"govuk-hint\">   test</span>" +
+                            "<span id=\"TextInputError\" class=\"govuk-error-message\"><span class=\"govuk-visually-hidden\">Error:</span>Error\r\n</span>"},
+            {"HasError","True"}
+        }
+    })
+
+    <p class="govuk-body">Add the <pre><code>HasError="true"</code></pre> attribute to the Text Input to highlight the Input with a red box</p>
+    
 </main>
