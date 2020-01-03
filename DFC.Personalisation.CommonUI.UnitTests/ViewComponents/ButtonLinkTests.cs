@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.ButtonLink;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using NSubstitute;
 using NUnit.Framework;
@@ -29,7 +30,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             LinkModel resultModel = (LinkModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [Test]
@@ -59,7 +60,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             LinkModel resultModel = (LinkModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [Test]
