@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Label
 {
-    [HtmlTargetElement("govukLabel", ParentTag = "govukRadioButton")]
+    [HtmlTargetElement("govukLabel")]
     
     public class LabelTagHelper : OptionalParamTagHelper
     {
@@ -40,5 +40,18 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
             };
             return View($"/Views/Shared/Components/BaseComponents/Label/{this.viewName}", model);
         }
+    }
+    [HtmlTargetElement("govukRadioLabel", ParentTag = "govukRadioButton")]
+
+    public class RadioLabelTagHelper : OptionalParamTagHelper
+    {
+        public RadioLabelTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
+        {
+        }
+    }
+
+    public class RadioLabel : Label
+    {
+        public RadioLabel() : base("govuk-radios__label") { }
     }
 }
