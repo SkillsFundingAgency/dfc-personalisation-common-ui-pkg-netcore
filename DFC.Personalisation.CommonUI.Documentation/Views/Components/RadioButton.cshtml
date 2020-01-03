@@ -12,29 +12,24 @@
     <div>
         <govukHeadingH1 text="Button" caption="Components"></govukHeadingH1>
     </div>
-    @*@await Component.InvokeAsync("RadioButton", new
-        {
-            title = "Radio button",
-        exampleCode = "<govukTextInput></govukTextInput>",
-        componentName = "RadioButton",
-            componentArgs = new Dictionary<string, string>() { { "Text", "Save and continue"},
-                {"ChildContent","<label class=\"govuk-label\" for=\"test\">\r\n    test\r\n</label>"} }
-        })*@
 
     @await Component.InvokeAsync("ExampleSection", new
 {
     title = "Text Input",
-    exampleCode = "<govukRadioButton Id=\"test\" value=\"yes\"><govukLabel Text=\"test\" For=\"test\"></govukLabel></govukRadioButton>",
+    exampleCode = "<govukRadioButton Id=\"test\" value=\"yes\">\n<govukRadioLabel Text=\"test\" For=\"test\"></govukRadioLabel>\n</govukRadioButton>",
     componentName = "RadioButton",
     componentArgs = new Dictionary<string, string>() {
         {"Id","TestBox"},
-        {"ChildContent","<label class=\"govuk-label\" for=\"TestBox\">\r\n    test\r\n</label>"},
+        {"ChildContent","<label class=\"govuk-label govuk-radios__label\" for=\"TestBox\">\r\n    test\r\n</label>"},
         {"Value","Yes" }
     }
 })
+    <govukRadioButton Id="test" value="yes"><govukRadioLabel Text="test" For="test"></govukRadioLabel></govukRadioButton>
+    <govukRadioButton Id="test2" value="no"><govukRadioLabel Text="test2" For="test2"></govukRadioLabel></govukRadioButton>
+
 
     <div>
-        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link">GOV.UK Design System</a>.</p>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/radios/" class="govuk-link">GOV.UK Design System</a>.</p>
     </div>
 
     <p class="govuk-body">Add the <pre><code>Id="{Value}"</code></pre> attribute to set the id property of the component</p>
