@@ -17,6 +17,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
     {
         private readonly string _additionalClass;
         private readonly string viewName;
+        private readonly string _svgTag;
 
         public string LinkHref { get; set; }
         public string LinkText { get; set; }
@@ -25,10 +26,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
         public string Class { get; set; }
         public string Id { get; set; }
 
-        public Link(string additionalButtonCSS = null, string viewName = "Default.cshtml")
+        public Link(string additionalButtonCSS = null, string viewName = "Default.cshtml",
+            string svgTag = null)
         {
             this._additionalClass = additionalButtonCSS;
             this.viewName = viewName;
+            this._svgTag = svgTag;
         }
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
@@ -43,7 +46,8 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
                 LinkTitle = LinkTitle,
                 LinkTabIndex = LinkTabIndex,
                 Id = Id,
-                Class = Class
+                Class = Class,
+                SvgTag = _svgTag
 
             };
             return View($"/Views/Shared/Components/BaseComponents/Link/{this.viewName}", model);

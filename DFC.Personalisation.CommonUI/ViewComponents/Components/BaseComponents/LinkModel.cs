@@ -11,5 +11,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
         public string Class { get; set; }
         public string AdditionalClass { get; set; }
         public string Id { get; set; }
+        public string SvgTag { get; set; }
     }
 }
