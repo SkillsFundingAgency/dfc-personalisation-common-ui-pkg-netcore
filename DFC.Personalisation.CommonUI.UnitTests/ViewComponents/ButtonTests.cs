@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+using FluentAssertions;
 using NSubstitute;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
@@ -23,7 +24,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(ButtonModel.AdditionalClass), "govuk-button--start")]
@@ -36,7 +37,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(ButtonModel.AdditionalClass), "govuk-button--secondary")]
@@ -49,7 +50,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(ButtonModel.AdditionalClass), "govuk-button--warning")]
@@ -63,7 +64,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [Test]

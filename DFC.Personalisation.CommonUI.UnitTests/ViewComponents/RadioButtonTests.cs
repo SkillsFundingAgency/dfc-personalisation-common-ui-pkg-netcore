@@ -4,6 +4,7 @@ using DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton;
 using NSubstitute;
 using NUnit.Framework;
 using System.Threading.Tasks;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
@@ -32,7 +33,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             RadioButtonModel resultModel = (RadioButtonModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
     }

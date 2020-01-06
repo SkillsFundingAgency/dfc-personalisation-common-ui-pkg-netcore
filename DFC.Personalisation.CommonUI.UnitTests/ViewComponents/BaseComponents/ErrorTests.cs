@@ -4,6 +4,7 @@ using NSubstitute;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FluentAssertions;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 {
@@ -22,7 +23,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             ErrorModel resultModel = (ErrorModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [Test]
