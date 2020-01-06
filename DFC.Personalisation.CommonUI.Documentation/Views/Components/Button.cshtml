@@ -33,14 +33,14 @@
     @await Component.InvokeAsync("ExampleSection", new
     {
         title = "Button Link",
-        exampleCode = "<govukButtonLink LinkText=\"Button Link\" LinkHref=\"#\"\"></govukButtonLink>",
+        exampleCode = "<govukButtonLink LinkText=\"Button Link\" LinkHref=\"#\"\">\n</govukButtonLink>",
         componentName = "ButtonLink",
         componentArgs = new Dictionary<string, string>() { { "LinkText", "Continue" }, { "LinkHref", "#" } }
     })
     @await Component.InvokeAsync("ExampleSection", new
     {
         title = "Start Button Link",
-        exampleCode = "<govukStartButtonLink LinkText=\"Button Link\" LinkHref=\"#\"\"></govukStartButtonLink>",
+        exampleCode = "<govukStartButtonLink LinkText=\"Button Link\" LinkHref=\"#\"\">\n</govukStartButtonLink>",
         componentName = "StartButtonLink",
         componentArgs = new Dictionary<string, string>() { { "LinkText", "Start" }, { "LinkHref", "#" } }
     })

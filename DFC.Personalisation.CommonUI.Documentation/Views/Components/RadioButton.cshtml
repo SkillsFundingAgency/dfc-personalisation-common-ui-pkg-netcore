@@ -10,7 +10,7 @@
 <main id="main-content" role="main">
 
     <div>
-        <govukHeadingH1 text="Button" caption="Components"></govukHeadingH1>
+        <govukHeadingH1 text="RadioButton" caption="Components"></govukHeadingH1>
     </div>
 
     @await Component.InvokeAsync("ExampleSection", new
@@ -24,9 +24,6 @@
         {"Value","Yes" }
     }
 })
-    <govukRadioButton Id="test" value="yes"><govukRadioLabel Text="test" For="test"></govukRadioLabel></govukRadioButton>
-    <govukRadioButton Id="test2" value="no"><govukRadioLabel Text="test2" For="test2"></govukRadioLabel></govukRadioButton>
-
 
     <div>
         <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/radios/" class="govuk-link">GOV.UK Design System</a>.</p>
