@@ -18,7 +18,10 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BackLink
 
     public class BackLink : Link
     {
-        public BackLink():base("govuk-back-link") { }
+        public BackLink() : base("govuk-back-link")
+        {
+            base.LinkText = "Back";
+        }
     }
     
 }
