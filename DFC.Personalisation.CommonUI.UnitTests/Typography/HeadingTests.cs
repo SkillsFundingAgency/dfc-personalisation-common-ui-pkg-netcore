@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+using FluentAssertions;
 using NSubstitute;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.Typography
@@ -25,7 +26,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(HeadingModel.Size), "l")]
@@ -39,7 +40,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(HeadingModel.Size), "m")]
@@ -53,7 +54,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(HeadingModel.Size), "s")]
@@ -67,7 +68,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(expected, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [Test]
