@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton
 {
     [HtmlTargetElement("govukRadioButton")]
-    [RestrictChildren("govukLabel")]
+    [RestrictChildren("govukRadioLabel")]
     public class RadioButtonTagHelper : OptionalParamTagHelper
     {
         private readonly IViewComponentHelper _viewComponentHelper;

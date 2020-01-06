@@ -27,5 +27,21 @@
     @await Component.InvokeAsync("ExampleSection", new { title = "Warning button", exampleCode = "<govukWarningButton text=\"Delete account\"></govukWarningButton>", componentName = "WarningButton", componentArgs = new Dictionary<string, string>() { { "Text", "Delete account" } } })
 
     @await Component.InvokeAsync("ExampleSection", new { title = "Disabled button", exampleCode = "<govukButton text=\"Disabled button\" disabled=\"true\"></govukButton>", componentName = "Button", componentArgs = new Dictionary<string, string>() { { "Text", "Save and continue" }, { "Disabled", "true" } } })
+
     <p class="govuk-body">Add the <pre><code>disabled="true"</code></pre> attribute to any of the govuk buttons to render them in disabled mode.</p>
+
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "Button Link",
+        exampleCode = "<govukButtonLink LinkText=\"Button Link\" LinkHref=\"#\"\"></govukButtonLink>",
+        componentName = "ButtonLink",
+        componentArgs = new Dictionary<string, string>() { { "LinkText", "Continue" }, { "LinkHref", "#" } }
+    })
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "Start Button Link",
+        exampleCode = "<govukStartButtonLink LinkText=\"Button Link\" LinkHref=\"#\"\"></govukStartButtonLink>",
+        componentName = "StartButtonLink",
+        componentArgs = new Dictionary<string, string>() { { "LinkText", "Start" }, { "LinkHref", "#" } }
+    })
 </main>
