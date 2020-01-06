@@ -13,7 +13,6 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
     public class BackLinkTests
     {
 
-        [TestCase(nameof(LinkModel.LinkText),"The Text Field has Been Set")]
         [TestCase(nameof(LinkModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(LinkModel.LinkHref), "The Text Field has Been Set")]
         [TestCase(nameof(LinkModel.LinkTabIndex), "-1")]
@@ -30,6 +29,21 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             //Assert
             value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+        [Test]
+        public void WhenBackLinkInvoked_ThenViewModelLinkTextShouldBeSetToBackAsDefault()
+        {
+            var values = new Dictionary<string, string>() { };
+
+            var component = new BackLink();
+            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+
+            ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
+            LinkModel resultModel = (LinkModel)result.ViewData.Model;
+
+            //Assert
+            "Back".Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, "LinkText"));
         }
 
         [Test]
