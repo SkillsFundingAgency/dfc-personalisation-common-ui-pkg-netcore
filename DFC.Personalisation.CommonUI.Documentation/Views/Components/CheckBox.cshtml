@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Checkbox";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="CheckBox" caption="Components"></govukHeadingH1>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new
+{
+    title = "Checkbox",
+    exampleCode = "<govukCheckbox Id=\"TestCheckbox\" Label=\"Test checkbox\" value=\"True\"\n checked=\"False\"></govukCheckbox>",
+    componentName = "Checkbox",
+    componentArgs = new Dictionary<string, string>() {
+                {"Id","TestCheckbox"},
+                {"Value","True" },
+                {"Checked", "False" },
+                {"Label", "Test Checkbox"}
+    }
+})
+
+
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/checkboxes/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
+
+    <p class="govuk-body">Add the <pre><code>Id="{Value}"</code></pre> attribute to set the id property of the component</p>
+    <p class="govuk-body">Add the <pre><code>Value="{value}"</code></pre> attribute to set the value of the Checkbox</p>
+    <p class="govuk-body">Add the <pre><code>Checked="{value}"</code></pre> attribute to set the initial checked status of the Checkbox</p>
+    <p class="govuk-body">Add the <pre><code>Label="{value}"</code></pre> attribute to set the text of the Checkbox</p>
+</main>

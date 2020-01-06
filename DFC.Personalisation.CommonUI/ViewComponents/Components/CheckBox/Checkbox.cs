@@ -41,11 +41,11 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
                 Id = Id,
                 Checked = Checked,
                 Label = Label,
-                Name = Name,
+                Name = string.IsNullOrEmpty(Name) ? Id : Name,
                 Value = Value,
                 AdditionalClass = this._additionalCss,
             };
-            return View($"/Views/Shared/Components/Button/{this.viewName}", model);
+            return View($"/Views/Shared/Components/CheckBox/{this.viewName}", model);
         }
     }
 }
