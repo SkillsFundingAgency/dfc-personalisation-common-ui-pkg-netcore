@@ -20,7 +20,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
 
         public string Text { get; set; }
         public string Caption { get; set; }
-
+        public string AdditionalClass { get; set; }
         public Heading(string size = "xl")
         {
             this.size = size;
@@ -37,6 +37,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
                 Size = this.size,
                 Text = this.Text,
                 Caption = this.Caption,
+                AdditionalClass = this.AdditionalClass
             };
 
             switch(this.size)

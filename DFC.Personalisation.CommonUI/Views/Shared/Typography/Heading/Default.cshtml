@@ -4,4 +4,8 @@
 {
     <span class="govuk-caption-@Model.Size">@Model.Caption</span>
 }
-<@Model.Tag class="govuk-heading-@Model.Size">@Model.Text</@Model.Tag>
+@if(string.IsNullOrWhiteSpace(Model.AdditionalClass))
+{
+    Model.AdditionalClass = string.Empty;
+}
+<@Model.Tag class="govuk-heading-@Model.Size @Model.AdditionalClass">@Model.Text</@Model.Tag>
