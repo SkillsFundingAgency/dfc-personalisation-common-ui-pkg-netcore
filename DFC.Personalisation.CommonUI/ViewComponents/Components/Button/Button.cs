@@ -22,6 +22,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
 
         public string Text { get; set; }
         public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
 
         public Button(string additionalButtonCSS = null, string viewName = "Default.cshtml")
         {
@@ -37,7 +38,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
             {
                 Text = this.Text,
                 Disabled = this.Disabled,
-                AdditionalClass = this.additionalButtonCSS,
+                AdditionalClass = string.IsNullOrWhiteSpace(this.additionalButtonCSS) ? AdditionalClass : this.additionalButtonCSS,
             };
             return View($"/Views/Shared/Components/Button/{this.viewName}", model);
         }
