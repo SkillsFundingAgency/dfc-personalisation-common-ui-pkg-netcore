@@ -15,15 +15,16 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
     }
     public class Link : BaseViewComponent
     {
-        private readonly string _additionalClass;
         private readonly string viewName;
         private readonly string _svgTag;
+        private readonly string _additionalClass;
 
         public string LinkHref { get; set; }
         public string LinkText { get; set; }
         public string LinkTitle { get; set; }
         public int LinkTabIndex { get; set; }
         public string Class { get; set; }
+        public string AdditionalClass { get; set; }
         public string Id { get; set; }
 
         public Link(string additionalButtonCSS = null, string viewName = "Default.cshtml",
@@ -41,7 +42,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
             var model = new LinkModel()
             {
                 LinkText = LinkText,
-                AdditionalClass = _additionalClass,
+                AdditionalClass = string.IsNullOrWhiteSpace(this._additionalClass) ? AdditionalClass : this._additionalClass,
                 LinkHref = LinkHref,
                 LinkTitle = LinkTitle,
                 LinkTabIndex = LinkTabIndex,

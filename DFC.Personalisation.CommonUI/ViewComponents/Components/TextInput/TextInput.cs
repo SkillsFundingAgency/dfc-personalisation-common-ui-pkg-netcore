@@ -24,7 +24,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 
     public class TextInput : BaseViewComponent
     {
-        private readonly string _additionalCss;
         private readonly string viewName;
 
         public string Id { get; set; }
@@ -32,10 +31,10 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
         public string ErrorMessage { get; set; }
         public string ChildContent { get; set; }
         public bool HasError { get; set; }
+        public string AdditionalClass { get; set; }
 
-        public TextInput(string additionalCss = null, string viewName = "Default.cshtml")
+        public TextInput(string viewName = "Default.cshtml")
         {
-            this._additionalCss = additionalCss;
             this.viewName = viewName;
         }
 
@@ -45,7 +44,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 
             var model = new TextInputModel()
             {
-                AdditionalClass = _additionalCss,
+                AdditionalClass = AdditionalClass,
                 ChildContent = ChildContent,
                 HasError = HasError,
                 Id = Id,
