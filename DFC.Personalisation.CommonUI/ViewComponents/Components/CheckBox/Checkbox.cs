@@ -16,7 +16,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
 
     public class Checkbox : BaseViewComponent
     {
-        private readonly string _additionalCss;
         private readonly string viewName;
 
         public string Label { get; set; }
@@ -26,9 +25,8 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
         public string AdditionalClass { get; set; }
         public string Id { get; set; }
 
-        public Checkbox(string additionalCss = null, string viewName = "Default.cshtml")
+        public Checkbox(string viewName = "Default.cshtml")
         {
-            this._additionalCss = additionalCss;
             this.viewName = viewName;
         }
 
@@ -41,11 +39,11 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
                 Id = Id,
                 Checked = Checked,
                 Label = Label,
-                Name = Name,
+                Name = string.IsNullOrEmpty(Name) ? Id : Name,
                 Value = Value,
-                AdditionalClass = this._additionalCss,
+                AdditionalClass = AdditionalClass
             };
-            return View($"/Views/Shared/Components/Button/{this.viewName}", model);
+            return View($"/Views/Shared/Components/CheckBox/{this.viewName}", model);
         }
     }
 }

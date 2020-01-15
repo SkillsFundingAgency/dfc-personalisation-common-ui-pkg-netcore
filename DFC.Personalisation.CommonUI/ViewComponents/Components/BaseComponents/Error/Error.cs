@@ -17,12 +17,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
     {
         public string Text { get; set; }
         public string Id { get; set; }
-        private readonly string _additionalClass;
+        public string AdditionalClass { get; set; }
+
         private readonly string _viewName;
 
-        public Error(string additionalClass = null, string viewName = "Default.cshtml")
+        public Error(string viewName = "Default.cshtml")
         {
-            _additionalClass = additionalClass;
             _viewName = viewName;
         }
 
@@ -33,7 +33,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
             var model = new ErrorModel()
             {
                 Text= Text,
-                AdditionalClass = _additionalClass,
+                AdditionalClass = AdditionalClass,
                 Id = Id
             };
             return View($"/Views/Shared/Components/BaseComponents/Error/{_viewName}", model);

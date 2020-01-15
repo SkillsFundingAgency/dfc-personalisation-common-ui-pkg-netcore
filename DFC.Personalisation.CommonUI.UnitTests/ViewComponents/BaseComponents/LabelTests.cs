@@ -5,6 +5,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton;
+using FluentAssertions;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 {
@@ -23,7 +24,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             LabelModel resultModel = (LabelModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [TestCase(nameof(LabelModel.AdditionalClass), "govuk-radios__label")]
@@ -38,7 +39,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             LabelModel resultModel = (LabelModel)result.ViewData.Model;
 
             //Assert
-            Assert.AreEqual(value, ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
         [Test]

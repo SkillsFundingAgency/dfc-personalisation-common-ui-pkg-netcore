@@ -6,5 +6,6 @@
         public string Caption { get; set; }
         public string Tag { get; set; }
         public string Size { get; set; }
+        public string AdditionalClass { get; set; }
     }
 }

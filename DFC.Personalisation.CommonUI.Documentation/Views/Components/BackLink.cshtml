@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "BackLink";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="BackLink" caption="Components"></govukHeadingH1>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new
+{
+    title = "BackLink",
+    exampleCode = "<govukBackLink LinkHref=\"#\" LinkTitle=\"BackLink\" \n" +
+                           " LinkTabIndex=\"1\" Id=\"BackLink\"></govukBackLink>",
+    componentName = "BackLink",
+    componentArgs = new Dictionary<string, string>() {
+                {"Id","BackLink"},
+                {"LinkHref","#" },
+                {"LinkTitle", "BackLink" },
+                {"LinkTabIndex","1" }
+            }
+})
+
+
+
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/back-link/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
+
+    <p class="govuk-body">Add the <pre><code>Id="{Value}"</code></pre> attribute to set the id property of the component</p>
+    <p class="govuk-body">Add the <pre><code>LinkHref="{value}"</code></pre> attribute to set the Href of the Link</p>
+    <p class="govuk-body">Add the <pre><code>LinkTitle="{value}"</code></pre> attribute to set the Title of the Link</p>
+    <p class="govuk-body">Add the <pre><code>LinkTabIndex="{value}"</code></pre> attribute to set the tab index of the Link</p>
+</main>

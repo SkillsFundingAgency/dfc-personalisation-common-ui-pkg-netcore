@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Collections.Generic;
+using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BackLink
 {
@@ -15,38 +16,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BackLink
     }
 
 
-    public class BackLink :BaseViewComponent
+    public class BackLink : Link
     {
-
-        private readonly string additionalButtonCSS;
-        private readonly string viewName;
-
-        public string Id { get; set; }
-        public string LinkHref { get; set; }
-        public string LinkText { get; set; }
-        public string LinkTitle { get; set; }
-        public int LinkTabIndex { get; set; }
-
-        public BackLink(string additionalButtonCSS = null, string viewName = "Default.cshtml")
+        public BackLink() : base("govuk-back-link")
         {
-            this.additionalButtonCSS = additionalButtonCSS;
-            this.viewName = viewName;
-        }
-
-        public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
-        {
-            SetProps(values);
-
-            var model = new BackLinkModel()
-            {
-                LinkText = LinkText,
-                AdditionalClass = additionalButtonCSS,
-                LinkHref = LinkHref,
-                LinkTitle = LinkTitle,
-                Id = Id,
-                LinkTabIndex = LinkTabIndex,
-            };
-            return View($"/Views/Shared/Components/BackLink/{this.viewName}", model);
+            base.LinkText = "Back";
         }
     }
+    
 }

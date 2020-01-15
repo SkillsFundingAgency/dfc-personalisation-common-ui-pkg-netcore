@@ -23,6 +23,16 @@ namespace DFC.Personalisation.CommonUI.Documentation.Controllers
         {
             return View();
         }
+
+        public IActionResult Checkbox()
+        {
+            return View();
+        }
+
+        public IActionResult BackLink()
+        {
+            return View();
+        }
     }
 }
 
