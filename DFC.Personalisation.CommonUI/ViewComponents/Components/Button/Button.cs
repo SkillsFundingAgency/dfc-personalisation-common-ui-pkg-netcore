@@ -5,9 +5,19 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
 {
-    [HtmlTargetElement("govukButton")]
-    public class ButtonTagHelper : OptionalParamTagHelper
+    public interface IButtonInterface
     {
+        string Text { get; set; }
+        bool Disabled { get; set; }
+        string AdditionalClass { get; set; }
+    }
+    [HtmlTargetElement("govukButton")]
+    public class ButtonTagHelper : OptionalParamTagHelper, IButtonInterface
+    {
+        public string Text { get; set; }
+        public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
+
         public ButtonTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
@@ -15,7 +25,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
 
-    public class Button : BaseViewComponent
+    public class Button : BaseViewComponent, IButtonInterface
     {
         private readonly string additionalButtonCSS;
         private readonly string viewName;
@@ -45,8 +55,11 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
     [HtmlTargetElement("govukStartButton")]
-    public class StartButtonTagHelper : OptionalParamTagHelper
+    public class StartButtonTagHelper : OptionalParamTagHelper, IButtonInterface
     {
+        public string Text { get; set; }
+        public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
         public StartButtonTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
@@ -61,8 +74,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
     [HtmlTargetElement("govukSecondaryButton")]
-    public class SecondaryButtonTagHelper : OptionalParamTagHelper
+    public class SecondaryButtonTagHelper : OptionalParamTagHelper, IButtonInterface
     {
+        public string Text { get; set; }
+        public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
+
         public SecondaryButtonTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
@@ -77,8 +94,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
     [HtmlTargetElement("govukWarningButton")]
-    public class WarningButtonTagHelper : OptionalParamTagHelper
+    public class WarningButtonTagHelper : OptionalParamTagHelper, IButtonInterface
     {
+        public string Text { get; set; }
+        public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
+
         public WarningButtonTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {

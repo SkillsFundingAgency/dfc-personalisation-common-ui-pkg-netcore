@@ -35,7 +35,19 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new LinkTagHelper(tagHelper);
+            var componentTag = new LinkTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Class = "Class",
+                Id = "Id",
+                LinkHref = "LinkHref",
+                LinkTabIndex = 1,
+                LinkText = "LinkText",
+                LinkTitle = "LinkTitle"
+
+            };
+     
+            
             await ViewComponentTestHelper.CallTagHelper("Link", tagHelper, componentTag);
         }
 

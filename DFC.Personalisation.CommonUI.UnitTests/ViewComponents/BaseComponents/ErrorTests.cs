@@ -32,6 +32,9 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
             var componentTag = new ErrorTagHelper(tagHelper);
+            componentTag.AdditionalClass = "AdditionalClass";
+            componentTag.Id = "Id";
+            componentTag.Text = "ThisIsText";
             await ViewComponentTestHelper.CallTagHelper("Error", tagHelper, componentTag);
         }
     }

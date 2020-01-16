@@ -5,9 +5,25 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
 {
-    [HtmlTargetElement("govukCheckbox")]
-   public class CheckboxTagHelper : OptionalParamTagHelper
+    public interface ICheckboxAttributes
     {
+        string Label { get; set; }
+        bool Checked { get; set; }
+        string Name { get; set; }
+        string Value { get; set; }
+        string AdditionalClass { get; set; }
+        string Id { get; set; }
+    }
+    [HtmlTargetElement("govukCheckbox")]
+    public class CheckboxTagHelper : OptionalParamTagHelper, ICheckboxAttributes
+    {
+        public string Label { get; set; }
+        public bool Checked { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public string AdditionalClass { get; set; }
+        public string Id { get; set; }
+
         public CheckboxTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {

@@ -5,16 +5,23 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Label
 {
-    [HtmlTargetElement("govukLabel")]
-    
-    public class LabelTagHelper : OptionalParamTagHelper
+    public interface ILabelAttributes
     {
+        string Text { get; set; }
+        string For { get; set; }
+    }
+    [HtmlTargetElement("govukLabel")]
+    public class LabelTagHelper : OptionalParamTagHelper, ILabelAttributes
+    {
+        public string Text { get; set; }
+        public string For { get; set; }
+
         public LabelTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
     }
 
-    public class Label : BaseViewComponent
+    public class Label : BaseViewComponent, ILabelAttributes
     {
         private readonly string additionalButtonCSS;
         private readonly string viewName;

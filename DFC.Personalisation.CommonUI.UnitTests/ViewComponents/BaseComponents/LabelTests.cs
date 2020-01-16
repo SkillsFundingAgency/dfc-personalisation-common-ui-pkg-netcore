@@ -48,6 +48,8 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
             var componentTag = new LabelTagHelper(tagHelper);
+            componentTag.Text = "LabelText";
+            componentTag.For = "ForText";
             await ViewComponentTestHelper.CallTagHelper("Label", tagHelper, componentTag);
         }
 
