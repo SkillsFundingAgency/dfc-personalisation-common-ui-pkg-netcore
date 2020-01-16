@@ -5,15 +5,34 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
 {
-    [HtmlTargetElement("govukLink")]
-    public class LinkTagHelper : OptionalParamTagHelper
+    public interface ILinkAttributes
     {
+        string LinkHref { get; set; }
+        string LinkText { get; set; }
+        string LinkTitle { get; set; }
+        int LinkTabIndex { get; set; }
+        string Class { get; set; }
+        string AdditionalClass { get; set; }
+        string Id { get; set; }
+
+    }
+    [HtmlTargetElement("govukLink")]
+    public class LinkTagHelper : OptionalParamTagHelper, ILinkAttributes
+    {
+        public string LinkHref { get; set; }
+        public string LinkText { get; set; }
+        public string LinkTitle { get; set; }
+        public int LinkTabIndex { get; set; }
+        public string Class { get; set; }
+        public string AdditionalClass { get; set; }
+        public string Id { get; set; }
+
         public LinkTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
         }
     }
-    public class Link : BaseViewComponent
+    public class Link : BaseViewComponent, ILinkAttributes
     {
         private readonly string viewName;
         private readonly string _svgTag;

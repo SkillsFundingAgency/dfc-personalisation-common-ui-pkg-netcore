@@ -5,15 +5,25 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Error
 {
-    [HtmlTargetElement("govukError", ParentTag = "govukTextInput")]
-    public class ErrorTagHelper : OptionalParamTagHelper
+    public interface IErrorAttributes
     {
+        string Text { get; set; }
+        string Id { get; set; }
+        string AdditionalClass { get; set; }
+    }
+    [HtmlTargetElement("govukError", ParentTag = "govukTextInput")]
+    public class ErrorTagHelper : OptionalParamTagHelper, IErrorAttributes
+    {
+        public string Text { get; set; }
+        public string Id { get; set; }
+        public string AdditionalClass { get; set; }
+
         public ErrorTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
     }
 
-    public class Error : BaseViewComponent
+    public class Error : BaseViewComponent, IErrorAttributes
     {
         public string Text { get; set; }
         public string Id { get; set; }

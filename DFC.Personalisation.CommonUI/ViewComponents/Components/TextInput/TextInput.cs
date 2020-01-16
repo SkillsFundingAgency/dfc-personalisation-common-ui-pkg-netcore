@@ -6,10 +6,26 @@ using System.Threading.Tasks;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 {
+    public interface ITextAttributes
+    {
+        public string Id { get; set; }
+        public string HintText { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ChildContent { get; set; }
+        public bool HasError { get; set; }
+        public string AdditionalClass { get; set; }
+    }
     [HtmlTargetElement("govukTextInput")]
     [RestrictChildren("govukHint", "govukError" )]
-    public class TextInputTagHelper : OptionalParamTagHelper
+    public class TextInputTagHelper : OptionalParamTagHelper, ITextAttributes
     {
+        public string Id { get; set; }
+        public string HintText { get; set; }
+        public string ErrorMessage { get; set; }
+        public string ChildContent { get; set; }
+        public bool HasError { get; set; }
+        public string AdditionalClass { get; set; }
+
         private readonly IViewComponentHelper _viewComponentHelper;
         public TextInputTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
@@ -22,7 +38,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
         }
     }
 
-    public class TextInput : BaseViewComponent
+    public class TextInput : BaseViewComponent, ITextAttributes
     {
         private readonly string viewName;
 
