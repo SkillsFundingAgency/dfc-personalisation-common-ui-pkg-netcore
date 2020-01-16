@@ -34,7 +34,15 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new CheckboxTagHelper(tagHelper);
+            var componentTag = new CheckboxTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Checked = true,
+                Id = "Id",
+                Label = "Label",
+                Name = "Name",
+                Value = "Value"
+            };
             await ViewComponentTestHelper.CallTagHelper("Checkbox", tagHelper, componentTag);
         }
     }

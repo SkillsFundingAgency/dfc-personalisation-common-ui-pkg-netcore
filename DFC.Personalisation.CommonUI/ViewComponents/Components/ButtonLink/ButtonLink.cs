@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DFC.Personalisation.CommonUI.TagHelpers;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents;
+using DFC.Personalisation.CommonUI.ViewComponents.Components.Button;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
@@ -10,8 +11,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.ButtonLink
 {
 
     [HtmlTargetElement("govukButtonLink")]
-    public class ButtonLinkTagHelper : OptionalParamTagHelper
+    public class ButtonLinkTagHelper : OptionalParamTagHelper, IButtonInterface
     {
+        public string Text { get; set; }
+        public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
+
         public ButtonLinkTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
@@ -26,8 +31,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.ButtonLink
     }
 
     [HtmlTargetElement("govukStartButtonLink")]
-    public class StartButtonLinkTagHelper : OptionalParamTagHelper
+    public class StartButtonLinkTagHelper : OptionalParamTagHelper, IButtonInterface
     {
+        public string Text { get; set; }
+        public bool Disabled { get; set; }
+        public string AdditionalClass { get; set; }
+
         public StartButtonLinkTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {

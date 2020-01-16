@@ -5,16 +5,26 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
 {
-    [HtmlTargetElement("govukHeadingH1")]
-    public class HeadingTagHelper : OptionalParamTagHelper
+    public interface IHeadingAttributes
     {
+        string Text { get; set; }
+        string Caption { get; set; }
+        string AdditionalClass { get; set; }
+    }
+    [HtmlTargetElement("govukHeadingH1")]
+    public class HeadingTagHelper : OptionalParamTagHelper, IHeadingAttributes
+    {
+        public string Text { get; set; }
+        public string Caption { get; set; }
+        public string AdditionalClass { get; set; }
+
         public HeadingTagHelper(IViewComponentHelper viewComponentHelper) 
             : base(viewComponentHelper)
         {
         }
     }
 
-    public class Heading : BaseViewComponent
+    public class Heading : BaseViewComponent, IHeadingAttributes
     {
         private readonly string size;
 
@@ -64,8 +74,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
 
 
     [HtmlTargetElement("govukHeadingH2")]
-    public class HeadingH2TagHelper : OptionalParamTagHelper
+    public class HeadingH2TagHelper : OptionalParamTagHelper, IHeadingAttributes
     {
+        public string Text { get; set; }
+        public string Caption { get; set; }
+        public string AdditionalClass { get; set; }
+
         public HeadingH2TagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
@@ -80,8 +94,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
     }
 
     [HtmlTargetElement("govukHeadingH3")]
-    public class HeadingH3TagHelper : OptionalParamTagHelper
+    public class HeadingH3TagHelper : OptionalParamTagHelper, IHeadingAttributes
     {
+        public string Text { get; set; }
+        public string Caption { get; set; }
+        public string AdditionalClass { get; set; }
+
         public HeadingH3TagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {
@@ -96,8 +114,12 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
     }
 
     [HtmlTargetElement("govukHeadingH4")]
-    public class HeadingH4TagHelper : OptionalParamTagHelper
+    public class HeadingH4TagHelper : OptionalParamTagHelper, IHeadingAttributes
     {
+        public string Text { get; set; }
+        public string Caption { get; set; }
+        public string AdditionalClass { get; set; }
+
         public HeadingH4TagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
         {

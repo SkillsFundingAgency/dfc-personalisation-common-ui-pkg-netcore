@@ -76,7 +76,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new HeadingTagHelper(tagHelper);
+            var componentTag = new HeadingTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Caption = "Caption",
+                Text = "Text"
+            };
             await ViewComponentTestHelper.CallTagHelper("Heading", tagHelper, componentTag);
         }
 
@@ -85,7 +90,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new HeadingH2TagHelper(tagHelper);
+            var componentTag = new HeadingH2TagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Caption = "Caption",
+                Text = "Text"
+            };
             await ViewComponentTestHelper.CallTagHelper("HeadingH2", tagHelper, componentTag);
         }
 
@@ -94,7 +104,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new HeadingH3TagHelper(tagHelper);
+            var componentTag = new HeadingH3TagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Caption = "Caption",
+                Text = "Text"
+            };
             await ViewComponentTestHelper.CallTagHelper("HeadingH3", tagHelper, componentTag);
         }
 
@@ -103,7 +118,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new HeadingH4TagHelper(tagHelper);
+            var componentTag = new HeadingH4TagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Caption = "Caption",
+                Text = "Text"
+            };
             await ViewComponentTestHelper.CallTagHelper("HeadingH4", tagHelper, componentTag);
         }
     }

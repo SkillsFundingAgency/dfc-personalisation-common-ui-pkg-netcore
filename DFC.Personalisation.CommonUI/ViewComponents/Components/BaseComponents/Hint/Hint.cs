@@ -5,15 +5,21 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Hint
 {
-    [HtmlTargetElement("govukHint", ParentTag = "govukTextInput")]
-    public class HintTagHelper : OptionalParamTagHelper
+    public interface IHintAttributes
     {
+        public string HintText { get; set; }
+    }
+    [HtmlTargetElement("govukHint", ParentTag = "govukTextInput")]
+    public class HintTagHelper : OptionalParamTagHelper, IHintAttributes
+    {
+        public string HintText { get; set; }
+
         public HintTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
     }
 
-    public class Hint : BaseViewComponent
+    public class Hint : BaseViewComponent, IHintAttributes
     {
         private readonly string _additionalCss;
         private readonly string viewName;

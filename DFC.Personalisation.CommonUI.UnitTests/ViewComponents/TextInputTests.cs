@@ -35,7 +35,15 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new TextInputTagHelper(tagHelper);
+            var componentTag = new TextInputTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                ChildContent = "ChildContent",
+                ErrorMessage = "ErrorMessage",
+                HintText = "HintText",
+                HasError = false,
+                Id = "Id"
+            };
             await ViewComponentTestHelper.CallTagHelper("TextInput", tagHelper, componentTag);
         }
     }
