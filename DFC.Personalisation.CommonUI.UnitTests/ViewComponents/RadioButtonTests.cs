@@ -16,7 +16,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new RadioButtonTagHelper(tagHelper);
+            var componentTag = new RadioButtonTagHelper(tagHelper)
+            {
+                ChildContent = "ChildContent",
+                Id = "Id",
+                Value = "Value"
+            };
             await ViewComponentTestHelper.CallTagHelper("RadioButton", tagHelper, componentTag);
         }
 

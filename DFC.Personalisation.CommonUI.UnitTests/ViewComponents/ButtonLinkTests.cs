@@ -38,7 +38,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new ButtonLinkTagHelper(tagHelper);
+            var componentTag = new ButtonLinkTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Disabled = false,
+                Text = "ButtonText"
+            };
             await ViewComponentTestHelper.CallTagHelper("ButtonLink", tagHelper, componentTag);
         }
 
@@ -53,7 +58,8 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             var component = new StartButtonLink
             {
-                ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext()
+                ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext(),
+
             };
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
@@ -68,7 +74,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new StartButtonLinkTagHelper(tagHelper);
+            var componentTag = new StartButtonLinkTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Disabled = false,
+                Text = "ButtonText"
+            };
             await ViewComponentTestHelper.CallTagHelper("StartButtonLink", tagHelper, componentTag);
         }
     }

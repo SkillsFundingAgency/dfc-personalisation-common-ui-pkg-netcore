@@ -72,7 +72,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new ButtonTagHelper(tagHelper);
+            var componentTag = new ButtonTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Disabled = false,
+                Text = "ButtonText"
+            };
             await ViewComponentTestHelper.CallTagHelper("Button", tagHelper, componentTag);
         }
 
@@ -81,7 +86,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new StartButtonTagHelper(tagHelper);
+            var componentTag = new StartButtonTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Disabled = false,
+                Text = "ButtonText"
+            };
             await ViewComponentTestHelper.CallTagHelper("StartButton", tagHelper, componentTag);
         }
 
@@ -90,7 +100,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new SecondaryButtonTagHelper(tagHelper);
+            var componentTag = new SecondaryButtonTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Disabled = false,
+                Text = "ButtonText"
+            };
             await ViewComponentTestHelper.CallTagHelper("SecondaryButton", tagHelper, componentTag);
         }
 
@@ -99,7 +114,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new WarningButtonTagHelper(tagHelper);
+            var componentTag = new WarningButtonTagHelper(tagHelper)
+            {
+                AdditionalClass = "AdditionalClass",
+                Disabled = false,
+                Text = "ButtonText"
+            };
             await ViewComponentTestHelper.CallTagHelper("WarningButton", tagHelper, componentTag);
         }
     }
