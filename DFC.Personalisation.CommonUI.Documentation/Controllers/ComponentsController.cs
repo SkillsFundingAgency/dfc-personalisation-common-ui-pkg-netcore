@@ -33,6 +33,11 @@ namespace DFC.Personalisation.CommonUI.Documentation.Controllers
         {
             return View();
         }
+
+        public IActionResult AutoComplete()
+        {
+            return View();
+        }
     }
 }
 
