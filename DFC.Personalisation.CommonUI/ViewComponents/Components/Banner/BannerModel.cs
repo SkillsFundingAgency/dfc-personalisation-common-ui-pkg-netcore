@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Banner
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Banner
 {
     public class BannerModel : ViewModelBase, IBanner
     {
