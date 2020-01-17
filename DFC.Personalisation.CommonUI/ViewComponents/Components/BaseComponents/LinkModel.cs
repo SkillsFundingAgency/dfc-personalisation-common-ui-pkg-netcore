@@ -1,8 +1,8 @@
-﻿using DFC.Personalisation.CommonUI.Interfaces;
+﻿using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Interfaces;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
 {
-    public class LinkModel : ILink, IAdditional, IHtmlBase
+    public class LinkModel : ViewModelBase, ILinkAttributes
     {
         public string LinkHref { get; set; }
         public string LinkText { get; set; }

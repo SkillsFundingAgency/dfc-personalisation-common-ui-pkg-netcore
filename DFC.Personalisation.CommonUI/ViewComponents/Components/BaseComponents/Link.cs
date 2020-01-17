@@ -2,20 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Collections.Generic;
+using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Interfaces;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
 {
-    public interface ILinkAttributes
-    {
-        string LinkHref { get; set; }
-        string LinkText { get; set; }
-        string LinkTitle { get; set; }
-        int LinkTabIndex { get; set; }
-        string Class { get; set; }
-        string AdditionalClass { get; set; }
-        string Id { get; set; }
-
-    }
+    
     [HtmlTargetElement("govukLink")]
     public class LinkTagHelper : OptionalParamTagHelper, ILinkAttributes
     {
@@ -32,41 +23,36 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
         {
         }
     }
-    public class Link : BaseViewComponent, ILinkAttributes
+    public class Link : BaseViewComponent
     {
         private readonly string viewName;
         private readonly string _svgTag;
         private readonly string _additionalClass;
-
-        public string LinkHref { get; set; }
-        public string LinkText { get; set; }
-        public string LinkTitle { get; set; }
-        public int LinkTabIndex { get; set; }
-        public string Class { get; set; }
-        public string AdditionalClass { get; set; }
-        public string Id { get; set; }
-
+        private readonly LinkModel _model;
+        
         public Link(string additionalButtonCSS = null, string viewName = "Default.cshtml",
-            string svgTag = null)
+            string svgTag = null, string text = "")
         {
             this._additionalClass = additionalButtonCSS;
             this.viewName = viewName;
             this._svgTag = svgTag;
+            _model = new LinkModel{LinkText = text};
         }
+
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
-            SetProps(values);
+            _model.SetProps(values);
 
             var model = new LinkModel()
             {
-                LinkText = LinkText,
-                AdditionalClass = string.IsNullOrWhiteSpace(this._additionalClass) ? AdditionalClass : this._additionalClass,
-                LinkHref = LinkHref,
-                LinkTitle = LinkTitle,
-                LinkTabIndex = LinkTabIndex,
-                Id = Id,
-                Class = Class,
+                LinkText = _model.LinkText,
+                AdditionalClass = string.IsNullOrWhiteSpace(this._additionalClass) ? _model.AdditionalClass : this._additionalClass,
+                LinkHref = _model.LinkHref,
+                LinkTitle = _model.LinkTitle,
+                LinkTabIndex = _model.LinkTabIndex,
+                Id = _model.Id,
+                Class = _model.Class,
                 SvgTag = _svgTag
 
             };

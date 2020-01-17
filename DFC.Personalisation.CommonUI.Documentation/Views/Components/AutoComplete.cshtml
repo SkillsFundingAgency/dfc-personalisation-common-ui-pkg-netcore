@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewData["Title"] = "AutoComplete";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="AutoComeplete" caption="Components"></govukHeadingH1>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new
+{
+    title = "AutoComplete",
+    exampleCode = "<govukAutoComplete Id=\"my-autocomplete-container\" \nElement=\"my-autocomplete-container\"" +
+                  "LabelText=\"Select your country\" \nDataSource=\"countries\"></govukAutoComplete> ",
+    componentName = "AutoComplete",
+    componentArgs = new Dictionary<string, string>() {
+            {"Id","my-autocomplete-container"},
+        {"Element", "my-autocomplete-container" },
+        { "LabelText", "Select your country"},
+    {"Source", "countries" },
+        {"FunctionName", "AutoComplete1" }
+        }
+})
+
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://github.com/alphagov/accessible-autocomplete" class="govuk-link">GOV.UK Alpha Components</a>.</p>
+    </div>
+
+    <govukHeadingH3 Text="Require Options"></govukHeadingH3>
+
+    <p class="govuk-body"><pre><code>Id="{Value}"</code></pre> This sets the id property of the autoComplete Input</p>
+    <p class="govuk-body"><pre><code>element="{Value}"</code></pre> This sets the container element in which the autocomplete will be rendered in.</p>
+    <div>
+        <p class="govuk-body">
+            <pre><code>source="{Value}"</code></pre> This sets the source for the auto complete. This can either be a Function or Array.
+            please See the AlphaGov link for more information
+        </p>
+        <div class="app-example">
+            <div class="app-example-code">
+                <p>Using an array</p>
+                <pre><code>
+                    const countries = [
+                        'France',
+                        'Germany',
+                        'United Kingdom'
+                    ];
+                </code></pre>
+            </div>
+
+            <div class="app-example-code">
+                <p>Using a function</p>
+                <pre><code>
+                    function suggest(query, populateResults) {
+                        const results = [
+                            'France',
+                            'Germany',
+                            'United Kingdom'
+                        ];
+                        const filteredResults = results.filter(result =>
+                                            result.indexOf(query) !== -1);
+                        populateResults(filteredResults);
+                    }
+                </code></pre>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <p class="govuk-body">
+            <govukHeadingH4 Text="FunctionName"></govukHeadingH4>
+            <pre><code>FunctionName="{Value}"</code></pre> The is the name of the function created by the Tag Helper
+        </p>
+        <div class="app-example">
+            <div class="app-example-code">
+                For example, if you set the FunctionName to AutoComplete
+                <pre><code>
+                    document.onreadystatechange = () => {
+                        if (document.readyState === 'complete') {
+                            AutoComplete();
+                        }
+                    };
+        </code></pre>
+                The above code will call the AutoComplete code when the page has rendered
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <govukHeadingH3 Text="Optionial"></govukHeadingH3>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="autoselect"></govukHeadingH4>
+        <pre><code>autoselect ="{Value}"  (defaut:true)</code></pre> Set to true to highlight the first option
+        when the user types in something and receives results. Pressing enter will select it
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="confirmOnBlur"></govukHeadingH4>
+        <pre><code>confirmOnBlur (default: true)"</code></pre> The autocomplete will confirm the currently
+        selected option when the user clicks outside of the component. Set to false to disable
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="cssNameSpace"></govukHeadingH4>
+        <pre><code>cssNamespace ="{Value} (default: 'autocomplete')"</code></pre>Use this property to override the BEM block name that the JavaScript component will use.
+        You will need to rewrite the CSS class names to use your specified block name.
+    </p>
+    
+    <p class="govuk-body"><govukHeadingH4 Text="defaultValue"></govukHeadingH4><pre><code>defaultValue ="{Value} (default: '')"</code></pre> Specify a string to prefill the autocomplete with</p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="displayMenu"></govukHeadingH4>
+        <pre><code>displayMenu ="{Value} (default: 'inline') (inline or overlay)"</code></pre>You can set this property to specify the way the menu should appear,
+        whether inline or as an overlay.
+    </p>
+    
+    <p class="govuk-body">
+        <govukHeadingH4 Text="minLength"></govukHeadingH4>
+        <pre><code>minLength ="{Value} (default: 0)"</code></pre> The minimum number of characters that should be entered before the autocomplete will attempt to suggest options.
+        When the query length is under this,
+        the aria status region will also provide helpful text to the user informing them they should type in more
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="name"></govukHeadingH4>
+        <pre><code>name ="{Value} (default: 'input-autocomplete')"</code></pre> The name for the autocomplete input field, to use with a parent form
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="onConfirm"></govukHeadingH4>
+        <pre><code>onConfirm ="{Value} (default: () => {})"</code></pre> This function will be called when the user confirms an option, with the option they've confirmed.
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="required"></govukHeadingH4>
+        <pre><code>required ="{Value} (default: false)"</code></pre> The input field will be rendered with a required attribute.
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="showAllValues"></govukHeadingH4>
+        <pre><code>showAllValues ="{Value (default: false)}"</code></pre> If this is set to true, all values are shown when the user clicks the input.
+        This is similar to a default dropdown,
+        so the autocomplete is rendered with a dropdown arrow to convey this behaviour.
+    </p>
+    <p class="govuk-body">
+        <govukHeadingH4 Text="showNoOptionsFound"></govukHeadingH4>
+        <pre><code>showNoOptionsFound ="{Value} (default: true)"</code></pre>The autocomplete will display a "No results found" template when there are no results.
+        Set to false to disable
+    </p>
+
+
+</main>
+<script src="~/assets/js/accessible-autocomplete.min.js"></script>
+<script>
+
+
+    document.onreadystatechange = () => {
+        if (document.readyState === 'complete') {
+            AutoComplete1();
+            AutoComplete2();
+        }
+    };
+
+    const countries = [
+        'France',
+        'Germany',
+        'United Kingdom'
+    ];
+
+
+    function suggest(query, populateResults) {
+        const results = [
+            'France',
+            'Germany',
+            'United Kingdom'
+        ];
+        const filteredResults = results.filter(result => result.indexOf(query) !== -1);
+        populateResults(filteredResults);
+    }
+
+
+</script>
