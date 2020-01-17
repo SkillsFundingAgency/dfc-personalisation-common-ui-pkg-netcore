@@ -3,15 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>@if (!string.IsNullOrWhiteSpace((string)ViewData["Title"])){<text>@ViewData["Title"] - </text>}DFC.Personalisation.CommonUI.Documentation</title>
-    <partial name="_GovUKHeadStylesheetPartial" />
-    <link href="~/css/app.css" rel="stylesheet" media="all" />
+    <title>
+        @if (!string.IsNullOrWhiteSpace((string)ViewData["Title"]))
+        {<text>@ViewData["Title"] - </text>}DFC.Personalisation.CommonUI.Documentation
+</title>
+<partial name="_GovUKHeadStylesheetPartial" />
+<link href="~/css/app.css" rel="stylesheet" media="all" />
 </head>
+
 <body class="govuk-template__body app-body-class">
     <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
     <partial name="_LayoutHeader" />
+    @RenderSection("ComponentsHeroBanner", required: false)
     <div class="app-pane__body govuk-width-container">
-
         <partial name="_LayoutPhaseBanner" />
 
         <div class="govuk-grid-row app-container">

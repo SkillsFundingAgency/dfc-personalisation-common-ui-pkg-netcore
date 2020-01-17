@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Banner";
+}
+
+@section ComponentsHeroBanner
+{
+    <partial name="_ComponentsHeroBanner" />
+}
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        @await Component.InvokeAsync("ExampleSection", 
+            new { title = "Primary Hero Banner", 
+                exampleCode = "<govukPrimaryHeroBanner id=\"exampleHeroBanner\"\n headerText=\"Primary hero banner\" \nsubheaderText=\"This is an example of a primary hero banner.\">\n</govukPrimaryHeroBanner>", 
+                componentName = "PrimaryHeroBanner", 
+                componentArgs = new Dictionary<string, string>()
+                {
+                    { "headerText", "Primary hero banner" },
+                    { "subheaderText", "This is an example of a primary hero banner." },
+                    { "id", "exampleHeroBanner" },
+
+                } })
+    </div>
+
+</main>
