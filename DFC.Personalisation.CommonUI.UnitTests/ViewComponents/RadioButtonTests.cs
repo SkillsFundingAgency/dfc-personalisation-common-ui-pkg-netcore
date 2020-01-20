@@ -18,9 +18,9 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             var componentTag = new RadioButtonTagHelper(tagHelper)
             {
-                ChildContent = "ChildContent",
                 Id = "Id",
-                Value = "Value"
+                Value = "Value",
+                AdditionalClass = "AdditionalClass"
             };
             await ViewComponentTestHelper.CallTagHelper("RadioButton", tagHelper, componentTag);
         }

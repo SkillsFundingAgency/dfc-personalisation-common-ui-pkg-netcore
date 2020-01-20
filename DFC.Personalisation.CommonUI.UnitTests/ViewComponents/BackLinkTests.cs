@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents;
+using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Link;
 using FluentAssertions;
 using NSubstitute;
 

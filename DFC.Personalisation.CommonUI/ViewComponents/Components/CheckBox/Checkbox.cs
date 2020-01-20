@@ -5,15 +5,7 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
 {
-    public interface ICheckboxAttributes
-    {
-        string Label { get; set; }
-        bool Checked { get; set; }
-        string Name { get; set; }
-        string Value { get; set; }
-        string AdditionalClass { get; set; }
-        string Id { get; set; }
-    }
+    
     [HtmlTargetElement("govukCheckbox")]
     public class CheckboxTagHelper : OptionalParamTagHelper, ICheckboxAttributes
     {
@@ -34,32 +26,19 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
     {
         private readonly string viewName;
 
-        public string Label { get; set; }
-        public bool Checked { get; set; }
-        public string Name { get; set; }
-        public string Value { get; set; }
-        public string AdditionalClass { get; set; }
-        public string Id { get; set; }
+        private readonly CheckBoxModel _model;
 
         public Checkbox(string viewName = "Default.cshtml")
         {
             this.viewName = viewName;
+            _model = new CheckBoxModel();
         }
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
-            SetProps(values);
-
-            var model = new CheckBoxModel()
-            {
-                Id = Id,
-                Checked = Checked,
-                Label = Label,
-                Name = string.IsNullOrEmpty(Name) ? Id : Name,
-                Value = Value,
-                AdditionalClass = AdditionalClass
-            };
-            return View($"/Views/Shared/Components/CheckBox/{this.viewName}", model);
+            _model.SetProps(values);
+            _model.Name = string.IsNullOrEmpty(_model.Name) ? _model.Id : _model.Name;
+            return View($"/Views/Shared/Components/CheckBox/{this.viewName}", _model);
         }
     }
 }

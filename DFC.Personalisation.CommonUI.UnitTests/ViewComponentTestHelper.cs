@@ -40,7 +40,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests
 
             var ctx = new TagHelperContext($"govuk{tag}", new TagHelperAttributeList
             {
-                {nameof(Error.Text),""}
+                {nameof(ErrorModel.Text),""}
             }, new Dictionary<object, object>(), Guid.NewGuid().ToString("N"));
 
             var output = new TagHelperOutput($"govuk{tag}",

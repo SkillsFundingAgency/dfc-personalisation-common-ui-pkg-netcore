@@ -5,10 +5,6 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Hint
 {
-    public interface IHintAttributes
-    {
-        public string HintText { get; set; }
-    }
     [HtmlTargetElement("govukHint", ParentTag = "govukTextInput")]
     public class HintTagHelper : OptionalParamTagHelper, IHintAttributes
     {
@@ -17,31 +13,33 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
         public HintTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
+
+        public string AdditionalClass { get; set; }
     }
 
-    public class Hint : BaseViewComponent, IHintAttributes
+    public class Hint : BaseViewComponent
     {
         private readonly string _additionalCss;
         private readonly string viewName;
-
-        public string HintText { get; set; }
-
+        private readonly HintModel _model;
+        
         public Hint(string additionalCss = null, string viewName = "Default.cshtml")
         {
             this._additionalCss = additionalCss;
             this.viewName = viewName;
+            _model = new HintModel();
         }
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
-            SetProps(values);
-
-            var model = new HintModel()
+            _model.SetProps(values);
+            _model.AdditionalClass = AutoPropsHelper.CombineClassProps(new List<string>
             {
-                HintText = HintText,
-                AdditionalClass = this._additionalCss,
-            };
-            return View($"/Views/Shared/Components/BaseComponents/Hint/{this.viewName}", model);
+                _model.AdditionalClass,
+                _additionalCss
+            });
+
+            return View($"/Views/Shared/Components/BaseComponents/Hint/{this.viewName}", _model);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace DFC.Personalisation.CommonUI.TagHelpers
 {
@@ -37,6 +39,18 @@ namespace DFC.Personalisation.CommonUI.TagHelpers
                     }
                 }
             }
+        }
+
+        public static string CombineClassProps(List<string> items)
+        {
+            var returnString = new StringBuilder();
+
+            foreach (var item in items.Where(item => !string.IsNullOrEmpty(item)))
+            {
+                returnString.Append(string.IsNullOrEmpty(returnString.ToString()) ? item : $" {item}");
+            }
+
+            return returnString.ToString();
         }
     }
     [Serializable]

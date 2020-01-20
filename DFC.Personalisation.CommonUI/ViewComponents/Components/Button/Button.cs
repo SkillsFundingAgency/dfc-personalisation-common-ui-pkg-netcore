@@ -5,14 +5,8 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
 {
-    public interface IButtonInterface
-    {
-        string Text { get; set; }
-        bool Disabled { get; set; }
-        string AdditionalClass { get; set; }
-    }
     [HtmlTargetElement("govukButton")]
-    public class ButtonTagHelper : OptionalParamTagHelper, IButtonInterface
+    public class ButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
         public string Text { get; set; }
         public bool Disabled { get; set; }
@@ -25,37 +19,37 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
 
-    public class Button : BaseViewComponent, IButtonInterface
+    public class Button : BaseViewComponent
     {
-        private readonly string additionalButtonCSS;
-        private readonly string viewName;
+        private readonly string _additionalButtonCss;
+        private readonly string _viewName;
 
-        public string Text { get; set; }
-        public bool Disabled { get; set; }
-        public string AdditionalClass { get; set; }
+        private readonly ButtonModel _model;
 
-        public Button(string additionalButtonCSS = null, string viewName = "Default.cshtml")
+        public Button(string additionalButtonCss = null, string viewName = "Default.cshtml")
         {
-            this.additionalButtonCSS = additionalButtonCSS;
-            this.viewName = viewName;
+            this._additionalButtonCss = additionalButtonCss;
+            this._viewName = viewName;
+            _model = new ButtonModel();
         }
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
-            SetProps(values);
+            _model.SetProps(values);
 
-            var model = new ButtonModel()
+
+            _model.AdditionalClass = AutoPropsHelper.CombineClassProps(new List<string>
             {
-                Text = this.Text,
-                Disabled = this.Disabled,
-                AdditionalClass = string.IsNullOrWhiteSpace(this.additionalButtonCSS) ? AdditionalClass : this.additionalButtonCSS,
-            };
-            return View($"/Views/Shared/Components/Button/{this.viewName}", model);
+                _model.AdditionalClass,
+                _additionalButtonCss
+            });
+
+            return View($"/Views/Shared/Components/Button/{this._viewName}", _model);
         }
     }
 
     [HtmlTargetElement("govukStartButton")]
-    public class StartButtonTagHelper : OptionalParamTagHelper, IButtonInterface
+    public class StartButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
         public string Text { get; set; }
         public bool Disabled { get; set; }
@@ -74,7 +68,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
     [HtmlTargetElement("govukSecondaryButton")]
-    public class SecondaryButtonTagHelper : OptionalParamTagHelper, IButtonInterface
+    public class SecondaryButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
         public string Text { get; set; }
         public bool Disabled { get; set; }
@@ -94,7 +88,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     }
 
     [HtmlTargetElement("govukWarningButton")]
-    public class WarningButtonTagHelper : OptionalParamTagHelper, IButtonInterface
+    public class WarningButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
         public string Text { get; set; }
         public bool Disabled { get; set; }
