@@ -11,6 +11,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 {
     class ButtonTests
     {
+        [TestCase(nameof(ButtonModel.Id), "Test Id")]
         [TestCase(nameof(ButtonModel.Text), "Test Text")]
         [TestCase(nameof(ButtonModel.Disabled), "True")]
         public void WhenButtonInvoked_ThenViewModelIsUpdated(string key, string value)
@@ -73,11 +74,17 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
             var componentTag = new ButtonTagHelper(tagHelper)
-            {
+            { 
+                Id = "Id",
                 AdditionalClass = "AdditionalClass",
                 Disabled = false,
                 Text = "ButtonText"
             };
+            string id = componentTag.Id;
+            string additionalClass = componentTag.AdditionalClass;
+            bool disabled = componentTag.Disabled;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("Button", tagHelper, componentTag);
         }
 
@@ -87,11 +94,16 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
             var componentTag = new StartButtonTagHelper(tagHelper)
-            {
+            { 
+                Id = "id",
                 AdditionalClass = "AdditionalClass",
                 Disabled = false,
                 Text = "ButtonText"
             };
+            string id = componentTag.Id;
+            string additionalClass = componentTag.AdditionalClass;
+            bool disabled = componentTag.Disabled;
+            string text = componentTag.Text;
             await ViewComponentTestHelper.CallTagHelper("StartButton", tagHelper, componentTag);
         }
 
@@ -102,10 +114,15 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             var componentTag = new SecondaryButtonTagHelper(tagHelper)
             {
+                Id = "Id",
                 AdditionalClass = "AdditionalClass",
                 Disabled = false,
                 Text = "ButtonText"
             };
+            string id = componentTag.Id;
+            string additionalClass = componentTag.AdditionalClass;
+            bool disabled = componentTag.Disabled;
+            string text = componentTag.Text;
             await ViewComponentTestHelper.CallTagHelper("SecondaryButton", tagHelper, componentTag);
         }
 
@@ -116,10 +133,16 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             var componentTag = new WarningButtonTagHelper(tagHelper)
             {
+                Id = "Id",
                 AdditionalClass = "AdditionalClass",
                 Disabled = false,
                 Text = "ButtonText"
             };
+            string id = componentTag.Id;
+            string additionalClass = componentTag.AdditionalClass;
+            bool disabled = componentTag.Disabled;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("WarningButton", tagHelper, componentTag);
         }
     }

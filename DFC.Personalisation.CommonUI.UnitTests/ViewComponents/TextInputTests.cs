@@ -16,6 +16,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         [TestCase(nameof(TextInputModel.HasError), "True")]
         [TestCase(nameof(TextInputModel.HintText), "-1")]
         [TestCase(nameof(TextInputModel.ErrorMessage), "The Text Field has Been Set")]
+        [TestCase(nameof(TextInputModel.AdditionalClass), "Additional Class")]
         public void WhenTextInputInvoked_ThenViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -43,6 +44,12 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 HasError = false,
                 Id = "Id"
             };
+            string id = componentTag.Id;
+            string hintText = componentTag.HintText;
+            string errorMessage = componentTag.ErrorMessage;
+            bool hasError = componentTag.HasError;
+            string additionalClass = componentTag.AdditionalClass;
+
             await ViewComponentTestHelper.CallTagHelper("TextInput", tagHelper, componentTag);
         }
     }

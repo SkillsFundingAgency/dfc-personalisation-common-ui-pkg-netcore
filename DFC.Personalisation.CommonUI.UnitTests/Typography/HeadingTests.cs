@@ -12,6 +12,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
     public class HeadingTests
     {
         [TestCase(nameof(HeadingModel.Text), "The Text Field has Been Set")]
+        [TestCase(nameof(HeadingModel.AdditionalClass), "AdditionalClass")]
         [TestCase(nameof(HeadingModel.Caption), "The Text Field has Been Set")]
         [TestCase(nameof(HeadingModel.Size), "xl")]
         [TestCase(nameof(HeadingModel.Tag), "h1")]
@@ -82,6 +83,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
                 Caption = "Caption",
                 Text = "Text"
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string caption = componentTag.Caption;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("Heading", tagHelper, componentTag);
         }
 
@@ -96,6 +101,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
                 Caption = "Caption",
                 Text = "Text"
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string caption = componentTag.Caption;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("HeadingH2", tagHelper, componentTag);
         }
 
@@ -110,6 +119,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
                 Caption = "Caption",
                 Text = "Text"
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string caption = componentTag.Caption;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("HeadingH3", tagHelper, componentTag);
         }
 
@@ -124,6 +137,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
                 Caption = "Caption",
                 Text = "Text"
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string caption = componentTag.Caption;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("HeadingH4", tagHelper, componentTag);
         }
     }

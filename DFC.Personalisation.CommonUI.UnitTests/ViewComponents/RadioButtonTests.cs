@@ -22,6 +22,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 Value = "Value",
                 AdditionalClass = "AdditionalClass"
             };
+            string id = componentTag.Id;
+            string value = componentTag.Value;
+            string additionalClass = componentTag.AdditionalClass;
+
             await ViewComponentTestHelper.CallTagHelper("RadioButton", tagHelper, componentTag);
         }
 

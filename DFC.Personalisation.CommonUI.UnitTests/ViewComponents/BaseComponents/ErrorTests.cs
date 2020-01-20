@@ -12,6 +12,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
     {
         [TestCase(nameof(ErrorModel.Text), "The Text Field has Been Set")]
         [TestCase(nameof(ErrorModel.Id), "The Text Field has Been Set")]
+        [TestCase(nameof(ErrorModel.AdditionalClass), "Additional Class")]
         public void WhenErrorInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -35,6 +36,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             componentTag.AdditionalClass = "AdditionalClass";
             componentTag.Id = "Id";
             componentTag.Text = "ThisIsText";
+            string additionalClass = componentTag.AdditionalClass;
+            string id = componentTag.Id;
+            string text = componentTag.Text;
+
             await ViewComponentTestHelper.CallTagHelper("Error", tagHelper, componentTag);
         }
     }

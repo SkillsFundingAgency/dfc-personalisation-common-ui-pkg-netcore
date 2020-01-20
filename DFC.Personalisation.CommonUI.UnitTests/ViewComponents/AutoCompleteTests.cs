@@ -64,6 +64,23 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 OnConfirm = "",
                 Source = ""
             };
+            string id = componentTag.Id;
+            bool autoSelect = componentTag.AutoSelect;
+            bool confirmOnBlur = componentTag.ConfirmOnBlur;
+            string cssNamespace = componentTag.CssNameSpace;
+            string defaultValue = componentTag.DefaultValue;
+            string displayMenu = componentTag.DisplayMenu;
+            string element = componentTag.Element;
+            string functionName = componentTag.FunctionName;
+            string labelText = componentTag.LabelText;
+            int minLength = componentTag.MinLength;
+            bool showNoOptionsFound = componentTag.ShowNoOptionsFound;
+            string name = componentTag.Name;
+            bool required = componentTag.Required;
+            bool showAllValues = componentTag.ShowAllValues;
+            string onConfirm = componentTag.OnConfirm;
+            string source = componentTag.Source;
+
             await ViewComponentTestHelper.CallTagHelper("AutoComplete", tagHelper, componentTag);
         }
     }
