@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using DFC.Personalisation.Common.Extensions;
 
 namespace DFC.Personalisation.CommonUI.TagHelpers
 {
@@ -12,7 +13,9 @@ namespace DFC.Personalisation.CommonUI.TagHelpers
         {
             foreach (var k in options.Keys)
             {
-                var prop = ob.GetType().GetProperty(k, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                
+
+                var prop = ob.GetType().GetProperty(k.GetPropertyName(), BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
                 if (prop != null)
                 {
                     try
@@ -52,7 +55,21 @@ namespace DFC.Personalisation.CommonUI.TagHelpers
 
             return returnString.ToString();
         }
+
+        private static string GetPropertyName(this string htmlPropertyName)
+        {
+            var nameSplit = htmlPropertyName.Split('-');
+            var returnString = new StringBuilder();
+            foreach (var s in nameSplit)
+            {
+                returnString.Append(s.FirstCharToUpper());
+            }
+
+            return returnString.ToString();
+
+        }
     }
+
     [Serializable]
     public class AutoPropException : Exception
     {
