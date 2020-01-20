@@ -9,7 +9,9 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Banner
     public class PrimaryHeroBannerTagHelper : OptionalParamTagHelper, IBanner 
     {
         public string Id { get; set; }
+        [HtmlAttributeName("headerText")]
         public string HeaderText { get; set; }
+        [HtmlAttributeName("subheaderText")]
         public string SubheaderText { get; set; }
 
         public PrimaryHeroBannerTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
