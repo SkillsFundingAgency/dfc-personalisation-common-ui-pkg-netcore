@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents
 {
@@ -9,35 +8,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents
     {
         protected void SetProps(Dictionary<string,string> options)
         {
-            foreach (var k in options.Keys)
-            {
-                var prop = this.GetType().GetProperty(k, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-                if (prop != null)
-                {
-                    try
-                    {
-                        var val = options[k];
-                        if (prop.PropertyType == typeof(bool))
-                        {
-                            prop.SetValue(this, Convert.ToBoolean(val));
-                            continue;
-                        }
-                        if (prop.PropertyType == typeof(int))
-                        {
-                            prop.SetValue(this, Convert.ToInt32(val));
-                            continue;
-                        }
-                        else
-                        {
-                            prop.SetValue(this, val);
-                        }
-                    }
-                    catch
-                    {
-                        throw new Exception("Unable to Map property");
-                    }
-                }
-            }
+           AutoPropsHelper.SetProps(options,this);
         }
     }
 }
