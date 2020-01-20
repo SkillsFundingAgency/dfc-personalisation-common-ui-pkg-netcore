@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
+﻿using DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.Banner;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 {

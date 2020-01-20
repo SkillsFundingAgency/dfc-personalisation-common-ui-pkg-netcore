@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Banner
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Banner
 {
     public interface IBanner
     {

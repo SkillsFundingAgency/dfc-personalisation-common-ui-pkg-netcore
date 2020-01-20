@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DFC.Personalisation.CommonUI.TagHelpers;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete;
 using FluentAssertions;
-using NSubstitute.ExceptionExtensions;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.TagHelper
 {
