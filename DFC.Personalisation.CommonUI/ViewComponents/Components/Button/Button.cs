@@ -8,6 +8,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     [HtmlTargetElement("govukButton")]
     public class ButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
+        public string Id { get; set; }
         public string Text { get; set; }
         public bool Disabled { get; set; }
         public string AdditionalClass { get; set; }
@@ -51,6 +52,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     [HtmlTargetElement("govukStartButton")]
     public class StartButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
+        public string Id { get; set; }
         public string Text { get; set; }
         public bool Disabled { get; set; }
         public string AdditionalClass { get; set; }
@@ -70,6 +72,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     [HtmlTargetElement("govukSecondaryButton")]
     public class SecondaryButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
+        public string Id { get; set; }
         public string Text { get; set; }
         public bool Disabled { get; set; }
         public string AdditionalClass { get; set; }
@@ -90,6 +93,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
     [HtmlTargetElement("govukWarningButton")]
     public class WarningButtonTagHelper : OptionalParamTagHelper, IButtonAttributes
     {
+        public string Id { get; set; }
         public string Text { get; set; }
         public bool Disabled { get; set; }
         public string AdditionalClass { get; set; }

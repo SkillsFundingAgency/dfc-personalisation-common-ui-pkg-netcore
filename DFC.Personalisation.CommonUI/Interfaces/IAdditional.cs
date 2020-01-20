@@ -4,7 +4,7 @@ namespace DFC.Personalisation.CommonUI.Interfaces
 {
     public interface IAdditional
     {
-        [HtmlAttributeName("AdditionClass")]
+        [HtmlAttributeName("AdditionalClass")]
         string AdditionalClass { get; set; }
     }
 }

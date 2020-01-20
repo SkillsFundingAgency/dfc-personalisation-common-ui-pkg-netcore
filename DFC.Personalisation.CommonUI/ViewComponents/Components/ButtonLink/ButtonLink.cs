@@ -8,10 +8,18 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.ButtonLink
 {
 
     [HtmlTargetElement("govukButtonLink")]
-    public class ButtonLinkTagHelper : OptionalParamTagHelper, IButtonAttributes
+    public class ButtonLinkTagHelper : OptionalParamTagHelper, ILinkAttributes
     {
-        public string Text { get; set; }
-        public bool Disabled { get; set; }
+        public string Id { get; set; }
+        [HtmlAttributeName("LinkHref")]
+        public string LinkHref { get; set; }
+        [HtmlAttributeName("LinkText")]
+        public string LinkText { get; set; }
+        [HtmlAttributeName("LinkTitle")]
+        public string LinkTitle { get; set; }
+        [HtmlAttributeName("LinkTabIndex")]
+        public int LinkTabIndex { get; set; }
+        [HtmlAttributeName("AdditionalClass")]
         public string AdditionalClass { get; set; }
 
         public ButtonLinkTagHelper(IViewComponentHelper viewComponentHelper)
@@ -28,10 +36,18 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.ButtonLink
     }
 
     [HtmlTargetElement("govukStartButtonLink")]
-    public class StartButtonLinkTagHelper : OptionalParamTagHelper, IButtonAttributes
+    public class StartButtonLinkTagHelper : OptionalParamTagHelper, ILinkAttributes
     {
-        public string Text { get; set; }
-        public bool Disabled { get; set; }
+        public string Id { get; set; }
+        [HtmlAttributeName("LinkHref")]
+        public string LinkHref { get; set; }
+        [HtmlAttributeName("LinkText")]
+        public string LinkText { get; set; }
+        [HtmlAttributeName("LinkTitle")]
+        public string LinkTitle { get; set; }
+        [HtmlAttributeName("LinkTabIndex")]
+        public int LinkTabIndex { get; set; }
+        [HtmlAttributeName("AdditionalClass")]
         public string AdditionalClass { get; set; }
 
         public StartButtonLinkTagHelper(IViewComponentHelper viewComponentHelper)

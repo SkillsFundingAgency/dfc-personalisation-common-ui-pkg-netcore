@@ -42,9 +42,20 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var componentTag = new ButtonLinkTagHelper(tagHelper)
             {
                 AdditionalClass = "AdditionalClass",
-                Disabled = false,
-                Text = "ButtonText"
+                Id = "ID",
+                LinkHref = "Link",
+                LinkTabIndex = 1,
+                LinkText = "Text",
+                LinkTitle = "Title"
             };
+
+            string additionalClass = componentTag.AdditionalClass;
+            string id = componentTag.Id;
+            string linkHref = componentTag.LinkHref;
+            int linkTabIndex = componentTag.LinkTabIndex;
+            string linkText = componentTag.LinkText;
+            string linkTitle = componentTag.LinkTitle;
+
             await ViewComponentTestHelper.CallTagHelper("ButtonLink", tagHelper, componentTag);
         }
 
@@ -78,9 +89,18 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var componentTag = new StartButtonLinkTagHelper(tagHelper)
             {
                 AdditionalClass = "AdditionalClass",
-                Disabled = false,
-                Text = "ButtonText"
+                Id = "ID",
+                LinkHref = "Link",
+                LinkTabIndex = 1,
+                LinkText = "Text",
+                LinkTitle = "Title"
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string id = componentTag.Id;
+            string linkHref = componentTag.LinkHref;
+            int linkTabIndex = componentTag.LinkTabIndex;
+            string linkText = componentTag.LinkText;
+            string linkTitle = componentTag.LinkTitle;
             await ViewComponentTestHelper.CallTagHelper("StartButtonLink", tagHelper, componentTag);
         }
     }
