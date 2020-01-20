@@ -1,11 +1,10 @@
-﻿using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents;
+﻿using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Link;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using NSubstitute;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Link;
-using FluentAssertions;
 
 namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 {
@@ -45,8 +44,14 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
                 LinkTabIndex = 1,
                 LinkText = "LinkText",
                 LinkTitle = "LinkTitle"
-
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string id = componentTag.Id;
+            string linkHref = componentTag.LinkHref;
+            int linkTabIndex = componentTag.LinkTabIndex;
+            string linkText = componentTag.LinkText;
+            string linkTitle = componentTag.LinkTitle;
+            string classProp = componentTag.Class;
      
             
             await ViewComponentTestHelper.CallTagHelper("Link", tagHelper, componentTag);
