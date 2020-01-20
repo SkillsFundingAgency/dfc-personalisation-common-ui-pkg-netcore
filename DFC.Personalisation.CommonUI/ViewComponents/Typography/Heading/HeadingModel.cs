@@ -1,6 +1,6 @@
 ﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
 {
-    public class HeadingModel
+    public class HeadingModel : ViewModelBase, IHeadingAttributes
     {
         public string Text { get; set; }
         public string Caption { get; set; }

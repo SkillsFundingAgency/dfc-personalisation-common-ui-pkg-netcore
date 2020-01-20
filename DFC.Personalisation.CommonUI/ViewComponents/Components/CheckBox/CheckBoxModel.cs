@@ -1,8 +1,6 @@
-﻿using DFC.Personalisation.CommonUI.Interfaces;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
 {
-    public class CheckBoxModel : IAdditional, IHtmlBase
+    public class CheckBoxModel : ViewModelBase, ICheckboxAttributes
     {
         public string Label { get; set; }
         public bool Checked { get; set; }

@@ -1,6 +1,4 @@
-﻿using DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Interfaces;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Link
 {
     public class LinkModel : ViewModelBase, ILinkAttributes
     {

@@ -32,6 +32,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 
             var componentTag = new HintTagHelper(tagHelper);
             componentTag.HintText = "HintText";
+            componentTag.AdditionalClass = "AdditionalClass";
             await ViewComponentTestHelper.CallTagHelper("Hint", tagHelper, componentTag);
         }
     }

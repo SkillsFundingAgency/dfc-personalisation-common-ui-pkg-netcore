@@ -1,8 +1,6 @@
-﻿using DFC.Personalisation.CommonUI.Interfaces;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton
 {
-    public class RadioButtonModel : IAdditional, IHtmlBase
+    public class RadioButtonModel : ViewModelBase, IRadioButtonAttributes
     {
         public string AdditionalClass { get; set; }
         public string Id { get; set; }

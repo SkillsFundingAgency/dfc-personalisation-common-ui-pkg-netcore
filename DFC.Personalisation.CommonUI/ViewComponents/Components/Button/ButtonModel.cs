@@ -1,8 +1,6 @@
-﻿using DFC.Personalisation.CommonUI.Interfaces;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.Button
 {
-    public class ButtonModel: IAdditional
+    public class ButtonModel: ViewModelBase, IButtonAttributes
     {
         public string Text { get; set; }
 
