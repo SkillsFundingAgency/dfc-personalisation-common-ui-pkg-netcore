@@ -5,47 +5,45 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Label
 {
-    public interface ILabelAttributes
-    {
-        string Text { get; set; }
-        string For { get; set; }
-    }
+    
     [HtmlTargetElement("govukLabel")]
     public class LabelTagHelper : OptionalParamTagHelper, ILabelAttributes
     {
         public string Text { get; set; }
         public string For { get; set; }
 
+        public string AdditionalClass { get; set; }
+
         public LabelTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
     }
 
-    public class Label : BaseViewComponent, ILabelAttributes
+    public class Label : BaseViewComponent
     {
         private readonly string additionalButtonCSS;
         private readonly string viewName;
+        private readonly LabelModel _model;
 
-        public string Text { get; set; }
-        public string For { get; set; }
 
         public Label(string additionalButtonCSS = null, string viewName = "Default.cshtml")
         {
             this.additionalButtonCSS = additionalButtonCSS;
             this.viewName = viewName;
+            _model = new LabelModel();
         }
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
-            SetProps(values);
+            _model.SetProps(values);
 
-            var model = new LabelModel()
+            _model.AdditionalClass = AutoPropsHelper.CombineClassProps(new List<string>
             {
-                Text = Text,
-                For = For,
-                AdditionalClass = additionalButtonCSS,
-            };
-            return View($"/Views/Shared/Components/BaseComponents/Label/{this.viewName}", model);
+                _model.AdditionalClass,
+                additionalButtonCSS
+            });
+
+            return View($"/Views/Shared/Components/BaseComponents/Label/{this.viewName}", _model);
         }
     }
     [HtmlTargetElement("govukRadioLabel", ParentTag = "govukRadioButton")]

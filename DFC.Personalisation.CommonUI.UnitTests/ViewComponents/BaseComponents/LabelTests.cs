@@ -27,7 +27,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
         }
 
-        [TestCase(nameof(LabelModel.AdditionalClass), "govuk-radios__label")]
+        [TestCase(nameof(LabelModel.AdditionalClass), "test-1")]
         public void WhenRadioLabelInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -39,7 +39,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             LabelModel resultModel = (LabelModel)result.ViewData.Model;
 
             //Assert
-            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            resultModel.AdditionalClass.Should().Contain(value);
         }
 
         [Test]
@@ -50,6 +50,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var componentTag = new LabelTagHelper(tagHelper);
             componentTag.Text = "LabelText";
             componentTag.For = "ForText";
+            componentTag.AdditionalClass = "AdditionalClass";
             await ViewComponentTestHelper.CallTagHelper("Label", tagHelper, componentTag);
         }
 

@@ -1,8 +1,6 @@
-﻿using DFC.Personalisation.CommonUI.Interfaces;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Label
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Label
 {
-    public class LabelModel : IAdditional
+    public class LabelModel :ViewModelBase, ILabelAttributes
     {
         public string For { get; set; }
         public string Text { get; set; }

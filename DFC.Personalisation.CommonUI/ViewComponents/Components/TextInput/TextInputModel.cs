@@ -1,8 +1,6 @@
-﻿using DFC.Personalisation.CommonUI.Interfaces;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 {
-    public class TextInputModel : IAdditional, IHtmlBase
+    public class TextInputModel : ViewModelBase, ITextInputAttributes
     {
         public string AdditionalClass { get; set; }
         public string Id { get; set; }

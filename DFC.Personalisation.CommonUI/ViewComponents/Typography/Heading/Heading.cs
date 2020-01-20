@@ -1,16 +1,10 @@
-﻿using System.Collections.Generic;
-using DFC.Personalisation.CommonUI.TagHelpers;
+﻿using DFC.Personalisation.CommonUI.TagHelpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
 {
-    public interface IHeadingAttributes
-    {
-        string Text { get; set; }
-        string Caption { get; set; }
-        string AdditionalClass { get; set; }
-    }
     [HtmlTargetElement("govukHeadingH1")]
     public class HeadingTagHelper : OptionalParamTagHelper, IHeadingAttributes
     {
@@ -24,33 +18,25 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Heading
         }
     }
 
-    public class Heading : BaseViewComponent, IHeadingAttributes
+    public class Heading : BaseViewComponent
     {
         private readonly string size;
 
-        public string Text { get; set; }
-        public string Caption { get; set; }
-        public string AdditionalClass { get; set; }
+        private readonly HeadingModel model;
+
         public Heading(string size = "xl")
         {
             this.size = size;
+            model = new HeadingModel();
         }
 
 
         public virtual IViewComponentResult Invoke(Dictionary<string,string> values)
         {
-            SetProps(values);
-            
-            var model = new HeadingModel()
-            {
-                Tag = "h1",
-                Size = this.size,
-                Text = this.Text,
-                Caption = this.Caption,
-                AdditionalClass = this.AdditionalClass
-            };
+            model.SetProps(values);
+            model.Size = size;
 
-            switch(this.size)
+            switch(size)
             {
                 case "l":
                     model.Tag = "h2";

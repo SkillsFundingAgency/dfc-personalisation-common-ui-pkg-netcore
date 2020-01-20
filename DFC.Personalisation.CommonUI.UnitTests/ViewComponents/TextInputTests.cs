@@ -38,7 +38,6 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var componentTag = new TextInputTagHelper(tagHelper)
             {
                 AdditionalClass = "AdditionalClass",
-                ChildContent = "ChildContent",
                 ErrorMessage = "ErrorMessage",
                 HintText = "HintText",
                 HasError = false,

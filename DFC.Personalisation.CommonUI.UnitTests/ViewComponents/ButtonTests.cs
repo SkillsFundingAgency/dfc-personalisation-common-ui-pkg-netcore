@@ -50,7 +50,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
 
             //Assert
-            expected.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+            resultModel.AdditionalClass.Should().BeEquivalentTo(expected);
         }
 
         [TestCase(nameof(ButtonModel.AdditionalClass), "govuk-button--warning")]
