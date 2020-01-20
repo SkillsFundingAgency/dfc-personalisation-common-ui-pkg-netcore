@@ -45,8 +45,14 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
                 LinkTabIndex = 1,
                 LinkText = "LinkText",
                 LinkTitle = "LinkTitle"
-
             };
+            string additionalClass = componentTag.AdditionalClass;
+            string id = componentTag.Id;
+            string linkHref = componentTag.LinkHref;
+            int linkTabIndex = componentTag.LinkTabIndex;
+            string linkText = componentTag.LinkText;
+            string linkTitle = componentTag.LinkTitle;
+            string classProp = componentTag.Class;
      
             
             await ViewComponentTestHelper.CallTagHelper("Link", tagHelper, componentTag);

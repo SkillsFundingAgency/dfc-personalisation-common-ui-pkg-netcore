@@ -51,6 +51,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             componentTag.Text = "LabelText";
             componentTag.For = "ForText";
             componentTag.AdditionalClass = "AdditionalClass";
+            string text = componentTag.Text;
+            string forText = componentTag.For;
+            string additionalClass = componentTag.AdditionalClass;
+
             await ViewComponentTestHelper.CallTagHelper("Label", tagHelper, componentTag);
         }
 

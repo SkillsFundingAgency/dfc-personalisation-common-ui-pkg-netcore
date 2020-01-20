@@ -15,6 +15,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         [TestCase(nameof(CheckBoxModel.Label), "True")]
         [TestCase(nameof(CheckBoxModel.Name), "name test")]
         [TestCase(nameof(CheckBoxModel.Value), "The Text Field has Been Set")]
+        [TestCase(nameof(CheckBoxModel.AdditionalClass), "Additional Class")]
         public void WhenCheckBoxInvoked_ThenViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -43,6 +44,13 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 Name = "Name",
                 Value = "Value"
             };
+            string additionalClass = componentTag.AdditionalClass;
+            bool isChecked = componentTag.Checked;
+            string id = componentTag.Id;
+            string label = componentTag.Label;
+            string name = componentTag.Name;
+            string value = componentTag.Value;
+
             await ViewComponentTestHelper.CallTagHelper("Checkbox", tagHelper, componentTag);
         }
     }
