@@ -12,6 +12,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton
     {
         public string Id { get; set; }
         public string Value { get; set; }
+        public string Name { get; set; }
 
         public string AdditionalClass { get; set; }
 
