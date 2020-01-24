@@ -20,7 +20,8 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             {
                 Id = "Id",
                 Value = "Value",
-                AdditionalClass = "AdditionalClass"
+                AdditionalClass = "AdditionalClass",
+                Name = "Name"
             };
             string id = componentTag.Id;
             string value = componentTag.Value;
@@ -31,6 +32,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
         [TestCase(nameof(RadioButtonModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(RadioButtonModel.Value), "The Text Field has Been Set")]
+        [TestCase(nameof(RadioButtonModel.Name), "The Text Field has Been Set")]
         public void WhenErrorInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
