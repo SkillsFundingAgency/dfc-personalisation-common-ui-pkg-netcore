@@ -29,11 +29,11 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
             await ViewComponentTestHelper.CallTagHelper("RadioButton", tagHelper, componentTag);
         }
-
+        
         [TestCase(nameof(RadioButtonModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(RadioButtonModel.Value), "The Text Field has Been Set")]
         [TestCase(nameof(RadioButtonModel.Name), "The Text Field has Been Set")]
-        public void WhenErrorInvoked_TheViewModelIsUpdated(string key, string value)
+        public void WhenRadioButtonInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
 
