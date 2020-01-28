@@ -25,6 +25,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
         public bool ShowAllValues { get; set; }
         public bool ShowNoOptionsFound { get; set; }
         public string LabelText { get; set; }
+        public string LabelTextClass { get; set; }
         public string FunctionName { get; set; }
     }
 
@@ -54,6 +55,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
                 Element = _model.Element,
                 Id = _model.Id,
                 LabelText = _model.LabelText,
+                LabelTextClass = _model.LabelTextClass,
                 MinLength = _model.MinLength,
                 Name = _model.Name,
                 ShowNoOptionsFound = _model.ShowNoOptionsFound,

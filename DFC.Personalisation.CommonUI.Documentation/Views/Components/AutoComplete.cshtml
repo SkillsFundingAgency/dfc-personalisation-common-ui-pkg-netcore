@@ -18,13 +18,14 @@
 {
     title = "AutoComplete",
     exampleCode = "<govukAutoComplete Id=\"my-autocomplete-container\" \nElement=\"my-autocomplete-container\"" +
-                  "LabelText=\"Select your country\" \nDataSource=\"countries\"></govukAutoComplete> ",
+                  "LabelText=\"Select your country\" LabelTextClass=\"govuk-heading-m\" \nDataSource=\"countries\"></govukAutoComplete> ",
     componentName = "AutoComplete",
     componentArgs = new Dictionary<string, string>() {
             {"Id","my-autocomplete-container"},
         {"Element", "my-autocomplete-container" },
         { "LabelText", "Select your country"},
-    {"Source", "countries" },
+        { "LabelTextClass", "govuk-heading-m"},
+        {"Source", "countries" },
         {"FunctionName", "AutoComplete1" }
         }
 })

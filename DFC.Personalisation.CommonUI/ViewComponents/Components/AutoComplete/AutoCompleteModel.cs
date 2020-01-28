@@ -17,6 +17,7 @@
         public bool ShowAllValues { get; set; } = false;
         public bool ShowNoOptionsFound { get; set; } = true;
         public string LabelText { get; set; }
+        public string LabelTextClass { get; set; }
         public string FunctionName { get; set; }
     }
 }

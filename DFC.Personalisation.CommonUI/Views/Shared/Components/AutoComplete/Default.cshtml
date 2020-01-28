@@ -1,6 +1,6 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete.AutoCompleteModel
 
-<label for="@Model.Id">@Model.LabelText</label>
+<label class="@Model.LabelTextClass" for="@Model.Id">@Model.LabelText</label>
 <div id="@Model.Id"></div>
 
 @{ Html.RenderPartial("~/Views/Shared/Components/AutoComplete/AutoCompleteScript.cshtml", @Model);}
