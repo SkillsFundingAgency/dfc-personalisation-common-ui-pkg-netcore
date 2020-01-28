@@ -16,8 +16,6 @@
         bool Required { get; set; }
         bool ShowAllValues { get; set; }
         bool ShowNoOptionsFound { get; set; }
-        string LabelText { get; set; }
-        string LabelTextClass { get; set; }
         string FunctionName { get; set; }
     }
 }
