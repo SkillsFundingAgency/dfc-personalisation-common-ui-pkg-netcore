@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "PhaseBanner";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="PhaseBanner" caption="Components"></govukHeadingH1>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new
+    {
+        title = "PhaseBanner",
+        exampleCode = "<govukPhaseBanner Id=\"TestPhaseBanner\" Phase=\"alpha|beta\" FeedbackHref=\"#\"></govukPhaseBanner>",
+        componentName = "PhaseBanner",
+        componentArgs = new Dictionary<string, string>() {
+            {"Id","TestPhaseBanner"},
+            {"Phase","beta"},
+            {"FeedbackHref","#"},
+        }
+    })
+
+
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/phase-banner/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
+    <p class="govuk-body">Add the <pre><code>Id="{Value}"</code></pre> attribute to set the id property of the component</p>
+    <p class="govuk-body">Add the <pre><code>Phase="{Value}"</code></pre> attribute to set the phase property of the component (defaults to 'alpha')</p>
+    <p class="govuk-body">Add the <pre><code>FeedbackHref="{Value}"</code></pre> attribute to set the href of the feedback link (defaults to '#')</p>
+</main>
