@@ -46,7 +46,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists
             _model.SetProps(values);
             _model.AdditionalClass = _additionalCss;
 
-            return View($"/Views/Shared/Components/Typography/Lists/{_viewName}", _model);
+            return View($"/Views/Shared/Typography/Lists/{_viewName}", _model);
         }
     }
 }

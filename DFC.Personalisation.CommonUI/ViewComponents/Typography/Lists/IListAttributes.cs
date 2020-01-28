@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DFC.Personalisation.CommonUI.Interfaces;
+﻿using DFC.Personalisation.CommonUI.Interfaces;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists
 {

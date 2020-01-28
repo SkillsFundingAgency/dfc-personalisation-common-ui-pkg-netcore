@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.AccessControl;
-using System.Text;
-
-namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists
+﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists
 {
     public class ListModel : ViewModelBase, IListAttributes
     {

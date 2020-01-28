@@ -31,7 +31,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists.ListItem
         {
             _model.SetProps(values);
 
-            return View($"/Views/Shared/Components/Typography/Lists/ListItem/{this.viewName}", _model);
+            return View($"/Views/Shared/Typography/Lists/ListItem/{this.viewName}", _model);
         }
     }
 }
