@@ -9,22 +9,7 @@ namespace DFC.Personalisation.CommonUI.Documentation.Controllers
             return View();
         }
 
-        public IActionResult Button()
-        {
-            return View();
-        }
-
-        public IActionResult TextInput()
-        {
-            return View();
-        }
-
-        public IActionResult RadioButton()
-        {
-            return View();
-        }
-
-        public IActionResult Checkbox()
+        public IActionResult AutoComplete()
         {
             return View();
         }
@@ -34,11 +19,32 @@ namespace DFC.Personalisation.CommonUI.Documentation.Controllers
             return View();
         }
 
-        public IActionResult AutoComplete()
+        public IActionResult Banner()
         {
             return View();
         }
-        public IActionResult Banner()
+
+        public IActionResult Button()
+        {
+            return View();
+        }
+
+        public IActionResult Checkbox()
+        {
+            return View();
+        }
+
+        public IActionResult PhaseBanner()
+        {
+            return View();
+        }
+
+        public IActionResult RadioButton()
+        {
+            return View();
+        }
+
+        public IActionResult TextInput()
         {
             return View();
         }

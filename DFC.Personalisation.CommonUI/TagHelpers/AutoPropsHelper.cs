@@ -26,10 +26,14 @@ namespace DFC.Personalisation.CommonUI.TagHelpers
                             prop.SetValue(ob, Convert.ToBoolean(val));
                             continue;
                         }
-                        if (prop.PropertyType == typeof(int))
+                        else if (prop.PropertyType == typeof(int))
                         {
                             prop.SetValue(ob, Convert.ToInt32(val));
                             continue;
+                        }
+                        else if (prop.PropertyType.IsEnum)
+                        {
+                            prop.SetValue(ob, Enum.Parse(prop.PropertyType, val, true));
                         }
                         else
                         {
