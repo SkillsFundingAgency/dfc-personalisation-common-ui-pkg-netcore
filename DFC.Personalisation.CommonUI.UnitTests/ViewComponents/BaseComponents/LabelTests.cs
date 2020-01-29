@@ -17,7 +17,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new Label();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             LabelModel resultModel = (LabelModel)result.ViewData.Model;
@@ -32,7 +32,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new RadioLabel();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             LabelModel resultModel = (LabelModel)result.ViewData.Model;
@@ -64,6 +64,15 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 
             var componentTag = new RadioLabelTagHelper(tagHelper);
             await ViewComponentTestHelper.CallTagHelper("RadioLabel", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenAutoCompleteLabelTagHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new AutoCompleteLabelTagHelper(tagHelper);
+            await ViewComponentTestHelper.CallTagHelper("AutoCompleteLabel", tagHelper, componentTag);
         }
     }
 }

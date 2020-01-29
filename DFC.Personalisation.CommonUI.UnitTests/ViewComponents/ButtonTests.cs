@@ -19,7 +19,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new Button();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
@@ -32,7 +32,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         public void WhenStartButtonInvoked_ThenViewModelIsUpdated(string key, string expected)
         {
             var component = new StartButton();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(new Dictionary<string, string>()) as ViewViewComponentResult;
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
@@ -45,7 +45,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         public void WhenSecondaryButtonInvoked_ThenViewModelIsUpdated(string key, string expected)
         {
             var component = new SecondaryButton();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(new Dictionary<string, string>()) as ViewViewComponentResult;
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;
@@ -59,7 +59,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         {
             
             var component = new WarningButton();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(new Dictionary<string, string>()) as ViewViewComponentResult;
             ButtonModel resultModel = (ButtonModel)result.ViewData.Model;

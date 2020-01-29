@@ -22,7 +22,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string,string>(){{key,value}};
 
             var component = new BackLink();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             LinkModel resultModel = (LinkModel)result.ViewData.Model;
@@ -37,7 +37,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string, string>() { };
 
             var component = new BackLink();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             LinkModel resultModel = (LinkModel)result.ViewData.Model;

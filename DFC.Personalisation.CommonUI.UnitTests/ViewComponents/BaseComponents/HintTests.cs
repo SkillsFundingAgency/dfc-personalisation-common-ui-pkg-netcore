@@ -16,7 +16,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new Hint();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             HintModel resultModel = (HintModel)result.ViewData.Model;
@@ -31,7 +31,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var values = new Dictionary<string, string>() { };
 
             var component = new RadioHint();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             HintModel resultModel = (HintModel)result.ViewData.Model;

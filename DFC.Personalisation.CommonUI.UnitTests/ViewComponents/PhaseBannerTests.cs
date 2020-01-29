@@ -17,7 +17,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string, string>() { { key, value } };
             var component = new PhaseBanner
             {
-                ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext()
+                ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext()
             };
 
             // Act.
@@ -35,7 +35,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string, string>() { };
             var component = new PhaseBanner()
             {
-                ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext()
+                ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext()
             };
             
             // Act.

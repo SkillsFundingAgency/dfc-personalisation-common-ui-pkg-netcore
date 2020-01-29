@@ -24,14 +24,13 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         [TestCase(nameof(AutoCompleteModel.Required), "True")]
         [TestCase(nameof(AutoCompleteModel.ShowAllValues), "True")]
         [TestCase(nameof(AutoCompleteModel.ShowNoOptionsFound), "True")]
-        [TestCase(nameof(AutoCompleteModel.LabelText), "name test")]
         [TestCase(nameof(AutoCompleteModel.FunctionName), "name test")]
         public void WhenCheckBoxInvoked_ThenViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new AutoComplete();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             AutoCompleteModel resultModel = (AutoCompleteModel)result.ViewData.Model;
@@ -55,7 +54,6 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 DisplayMenu = "",
                 Element = "",
                 FunctionName = "",
-                LabelText = "",
                 MinLength = 1,
                 ShowNoOptionsFound = true,
                 Name = "",
@@ -72,7 +70,6 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             string displayMenu = componentTag.DisplayMenu;
             string element = componentTag.Element;
             string functionName = componentTag.FunctionName;
-            string labelText = componentTag.LabelText;
             int minLength = componentTag.MinLength;
             bool showNoOptionsFound = componentTag.ShowNoOptionsFound;
             string name = componentTag.Name;
