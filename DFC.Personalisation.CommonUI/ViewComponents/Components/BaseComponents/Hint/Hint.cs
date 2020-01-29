@@ -42,4 +42,24 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
             return View($"/Views/Shared/Components/BaseComponents/Hint/{this.viewName}", _model);
         }
     }
+
+    [HtmlTargetElement("govukRadioHint", ParentTag = "govukRadioButton")]
+    public class RadioHintTagHelper : OptionalParamTagHelper, IHintAttributes
+    {
+        public string HintText { get; set; }
+
+        public RadioHintTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
+        {
+        }
+
+        public string AdditionalClass { get; set; }
+    }
+    public class RadioHint : Hint
+    {
+        public RadioHint() : base("govuk-radios__hint")
+        {
+        }
+
+    }
+    
 }

@@ -16,7 +16,22 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new Hint();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
+
+            ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
+            HintModel resultModel = (HintModel)result.ViewData.Model;
+
+            //Assert
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+        [TestCase(nameof(HintModel.AdditionalClass), "govuk-radios__hint")]
+        public void WhenRadioHintInvoked_TheViewModelIsUpdated(string key, string value)
+        {
+            var values = new Dictionary<string, string>() { };
+
+            var component = new RadioHint();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             HintModel resultModel = (HintModel)result.ViewData.Model;
@@ -37,6 +52,20 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             string additionalClass = componentTag.AdditionalClass;
 
             await ViewComponentTestHelper.CallTagHelper("Hint", tagHelper, componentTag);
+        }
+
+        [Test]
+        public async Task WhenRadioHintTagHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new RadioHintTagHelper(tagHelper);
+            componentTag.HintText = "HintText";
+            componentTag.AdditionalClass = "AdditionalClass";
+            string hintText = componentTag.HintText;
+            string additionalClass = componentTag.AdditionalClass;
+
+            await ViewComponentTestHelper.CallTagHelper("RadioHint", tagHelper, componentTag);
         }
     }
 }

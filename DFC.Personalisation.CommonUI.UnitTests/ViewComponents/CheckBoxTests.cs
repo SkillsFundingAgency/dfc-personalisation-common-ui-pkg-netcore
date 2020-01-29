@@ -21,7 +21,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new Checkbox();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             CheckBoxModel resultModel = (CheckBoxModel)result.ViewData.Model;
