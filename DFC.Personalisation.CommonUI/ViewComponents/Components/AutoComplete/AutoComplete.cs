@@ -2,14 +2,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
 {
     [HtmlTargetElement("govukAutoComplete")]
+    [RestrictChildren("govukAutoCompleteLabel")]
+
     public class AutoCompleteTagHelper : OptionalParamTagHelper, IAutoComplete {
-        public AutoCompleteTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
-        {
-        }
+
         public string Source { get; set; }
         public string Element { get; set; }
         public string Id { get; set; }
@@ -24,8 +26,17 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
         public bool Required { get; set; }
         public bool ShowAllValues { get; set; }
         public bool ShowNoOptionsFound { get; set; }
-        public string LabelText { get; set; }
         public string FunctionName { get; set; }
+
+        public AutoCompleteTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
+        {
+        
+        }
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            await ProcessAsyncWithChildren(context, output, nameof(AutoCompleteModel.ChildContent));
+        }
+       
     }
 
     public class AutoComplete : BaseViewComponent
@@ -38,6 +49,8 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
             _viewName = viewName;
             _model = new AutoCompleteModel();
         }
+
+        
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
@@ -53,13 +66,13 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
                 DisplayMenu = _model.DisplayMenu,
                 Element = _model.Element,
                 Id = _model.Id,
-                LabelText = _model.LabelText,
                 MinLength = _model.MinLength,
                 Name = _model.Name,
                 ShowNoOptionsFound = _model.ShowNoOptionsFound,
                 ShowAllValues = _model.ShowAllValues,
                 OnConfirm = _model.OnConfirm,
                 Required = _model.Required,
+                ChildContent = _model.ChildContent,
                 FunctionName = _model.FunctionName
             };
             return View($"/Views/Shared/Components/AutoComplete/{this._viewName}", model);

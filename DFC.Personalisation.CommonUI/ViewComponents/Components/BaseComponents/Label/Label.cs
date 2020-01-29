@@ -59,4 +59,21 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
     {
         public RadioLabel() : base("govuk-radios__label") { }
     }
+
+
+
+
+    [HtmlTargetElement("govukAutoCompleteLabel", ParentTag = "govukAutoComplete")]
+
+    public class AutoCompleteLabelTagHelper : OptionalParamTagHelper
+    {
+        public AutoCompleteLabelTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
+        {
+        }
+    }
+
+    public class AutoCompleteLabel : Label
+    {
+        public AutoCompleteLabel() : base("govuk-autocomplete__label") { }
+    }
 }

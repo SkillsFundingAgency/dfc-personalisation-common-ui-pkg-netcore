@@ -16,7 +16,8 @@
         public bool Required { get; set; } = false;
         public bool ShowAllValues { get; set; } = false;
         public bool ShowNoOptionsFound { get; set; } = true;
-        public string LabelText { get; set; }
+    
+        public string ChildContent { get; set; }
         public string FunctionName { get; set; }
     }
 }
