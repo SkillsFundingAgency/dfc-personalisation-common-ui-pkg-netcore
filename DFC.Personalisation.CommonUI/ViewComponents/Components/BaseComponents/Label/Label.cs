@@ -82,6 +82,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
 
     public class AutoCompleteLabel : Label
     {
-        public AutoCompleteLabel() : base("govuk-autocomplete__label") { }
+        public AutoCompleteLabel() : base("govuk-heading-m") { }
     }
 }
