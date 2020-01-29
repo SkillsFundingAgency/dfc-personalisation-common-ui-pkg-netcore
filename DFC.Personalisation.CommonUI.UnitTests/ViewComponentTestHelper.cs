@@ -24,7 +24,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests
 
         }
 
-        public static ViewComponentContext GeViewComponentContext()
+        public static ViewComponentContext GetViewComponentContext()
         {
             var httpContext = new DefaultHttpContext();
             var viewContext = new ViewContext();

@@ -21,7 +21,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new Heading();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
@@ -35,7 +35,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         public void WhenHeadingH2Invoked_ThenViewModelIsUpdated(string key, string expected)
         {
             var component = new HeadingH2();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(new Dictionary<string, string>()) as ViewViewComponentResult;
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
@@ -49,7 +49,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         public void WhenHeadingH3Invoked_ThenViewModelIsUpdated(string key, string expected)
         {
             var component = new HeadingH3();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(new Dictionary<string, string>()) as ViewViewComponentResult;
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
@@ -63,7 +63,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
         public void WhenHeadingH4Invoked_ThenViewModelIsUpdated(string key, string expected)
         {
             var component = new HeadingH4();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(new Dictionary<string, string>()) as ViewViewComponentResult;
             HeadingModel resultModel = (HeadingModel)result.ViewData.Model;
