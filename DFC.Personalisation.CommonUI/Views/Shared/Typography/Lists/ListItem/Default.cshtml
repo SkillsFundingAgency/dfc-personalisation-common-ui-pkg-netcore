@@ -1,5 +1,8 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists.ListItem.ListItemModel
 @{
-    string output = $"<li>{@Model.Text}</li>";
+
+    var openingTag = "<li>";
+    var closingTag = "</li>";
+    string output = $"{openingTag}{@Model.Text}{closingTag}";
     @Html.Raw(output)
 }
