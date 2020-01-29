@@ -20,7 +20,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var values = new Dictionary<string,string>(){{key,value}};
 
             var component = new PrimaryHeroBanner();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             BannerModel resultModel = (BannerModel)result.ViewData.Model;
