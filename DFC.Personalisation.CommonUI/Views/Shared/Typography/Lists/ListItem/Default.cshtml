@@ -1,2 +1,5 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists.ListItem.ListItemModel
-<li>@Model.Text</li>
+@{
+    string output = $"<li>{@Model.Text}</li>";
+    @Html.Raw(output)
+}
