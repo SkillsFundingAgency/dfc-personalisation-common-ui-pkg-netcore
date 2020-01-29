@@ -46,13 +46,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new LabelTagHelper(tagHelper);
-            componentTag.Text = "LabelText";
-            componentTag.For = "ForText";
-            componentTag.AdditionalClass = "AdditionalClass";
-            string text = componentTag.Text;
-            string forText = componentTag.For;
-            string additionalClass = componentTag.AdditionalClass;
+            var componentTag = new LabelTagHelper(tagHelper)
+            {
+                Text = "LabelText", For = "ForText", AdditionalClass = "AdditionalClass"
+            };
 
             await ViewComponentTestHelper.CallTagHelper("Label", tagHelper, componentTag);
         }
@@ -62,7 +59,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new RadioLabelTagHelper(tagHelper);
+            var componentTag = new RadioLabelTagHelper(tagHelper)
+            {
+                Text = "LabelText", For = "ForText", AdditionalClass = "AdditionalClass"
+            };
             await ViewComponentTestHelper.CallTagHelper("RadioLabel", tagHelper, componentTag);
         }
 
@@ -71,7 +71,10 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
         {
             var tagHelper = Substitute.For<IMockViewComponentHelper>();
 
-            var componentTag = new AutoCompleteLabelTagHelper(tagHelper);
+            var componentTag = new AutoCompleteLabelTagHelper(tagHelper)
+            {
+                Text = "LabelText", For = "ForText", AdditionalClass = "AdditionalClass"
+            };
             await ViewComponentTestHelper.CallTagHelper("AutoCompleteLabel", tagHelper, componentTag);
         }
     }

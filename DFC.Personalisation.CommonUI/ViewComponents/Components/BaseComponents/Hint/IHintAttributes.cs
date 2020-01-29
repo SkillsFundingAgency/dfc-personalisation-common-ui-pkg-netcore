@@ -2,7 +2,7 @@
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Hint
 {
-    public interface IHintAttributes : IAdditional
+    public interface IHintAttributes : IAdditional, IHtmlBase
     {
     }
 }

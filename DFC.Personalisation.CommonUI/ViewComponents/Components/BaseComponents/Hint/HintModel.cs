@@ -4,5 +4,6 @@
     {
         public string HintText { get; set; }
         public string AdditionalClass { get; set; }
+        public string Id { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
         }
 
         public string AdditionalClass { get; set; }
+        public string Id { get; set; }
     }
 
     public class Hint : BaseViewComponent
@@ -53,6 +54,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
         }
 
         public string AdditionalClass { get; set; }
+        public string Id { get; set; }
     }
     public class RadioHint : Hint
     {
