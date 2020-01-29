@@ -39,7 +39,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new BulletedList();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             ListModel resultModel = (ListModel)result.ViewData.Model;
@@ -67,7 +67,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.Typography
             var values = new Dictionary<string, string>() { { key, value } };
 
             var component = new ListItem();
-            component.ViewComponentContext = ViewComponentTestHelper.GeViewComponentContext();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
 
             ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
             ListItemModel resultModel = (ListItemModel)result.ViewData.Model;
