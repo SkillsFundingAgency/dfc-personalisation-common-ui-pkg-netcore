@@ -11,6 +11,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
     public class HintTests
     {
         [TestCase(nameof(HintModel.HintText), "The Text Field has Been Set")]
+        [TestCase(nameof(HintModel.Id), "The Text Field has Been Set")]
         public void WhenHintInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -48,8 +49,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var componentTag = new HintTagHelper(tagHelper);
             componentTag.HintText = "HintText";
             componentTag.AdditionalClass = "AdditionalClass";
-            string hintText = componentTag.HintText;
-            string additionalClass = componentTag.AdditionalClass;
+            componentTag.Id = "Id";
 
             await ViewComponentTestHelper.CallTagHelper("Hint", tagHelper, componentTag);
         }
@@ -62,8 +62,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             var componentTag = new RadioHintTagHelper(tagHelper);
             componentTag.HintText = "HintText";
             componentTag.AdditionalClass = "AdditionalClass";
-            string hintText = componentTag.HintText;
-            string additionalClass = componentTag.AdditionalClass;
+            componentTag.Id = "Id";
 
             await ViewComponentTestHelper.CallTagHelper("RadioHint", tagHelper, componentTag);
         }

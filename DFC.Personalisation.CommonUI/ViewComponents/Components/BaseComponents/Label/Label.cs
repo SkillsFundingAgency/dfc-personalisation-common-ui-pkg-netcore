@@ -46,13 +46,17 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
             return View($"/Views/Shared/Components/BaseComponents/Label/{this.viewName}", _model);
         }
     }
-    [HtmlTargetElement("govukRadioLabel", ParentTag = "govukRadioButton")]
 
-    public class RadioLabelTagHelper : OptionalParamTagHelper
+    [HtmlTargetElement("govukRadioLabel", ParentTag = "govukRadioButton")]
+    public class RadioLabelTagHelper : OptionalParamTagHelper, ILabelAttributes
     {
         public RadioLabelTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
+
+        public string AdditionalClass { get; set; }
+        public string For { get; set; }
+        public string Text { get; set; }
     }
 
     public class RadioLabel : Label
@@ -65,11 +69,15 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
 
     [HtmlTargetElement("govukAutoCompleteLabel", ParentTag = "govukAutoComplete")]
 
-    public class AutoCompleteLabelTagHelper : OptionalParamTagHelper
+    public class AutoCompleteLabelTagHelper : OptionalParamTagHelper, ILabelAttributes
     {
         public AutoCompleteLabelTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
         }
+
+        public string AdditionalClass { get; set; }
+        public string For { get; set; }
+        public string Text { get; set; }
     }
 
     public class AutoCompleteLabel : Label
