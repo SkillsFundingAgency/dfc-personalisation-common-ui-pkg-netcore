@@ -15,11 +15,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Typography.Lists
         public string Text { get; set; }
         public string AdditionalClass { get; set; }
 
-        private readonly IViewComponentHelper _viewComponentHelper;
-        public BulletedListTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
-        {
-            _viewComponentHelper = viewComponentHelper;
-        }
+        public BulletedListTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper) { }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
