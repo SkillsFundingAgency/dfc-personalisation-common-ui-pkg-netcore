@@ -1,0 +1,12 @@
+﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.ErrorSummary.ErrorSummaryModel
+
+<div class="govuk-error-summary" aria-labelledby="@Model.Id" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="@Model.Id">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            @Html.Raw(Model.ChildContent)
+        </ul>
+    </div>
+</div>
