@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "RadioButton";
+}
+
+@section LeftNav
+{
+    <partial name="_ComponentsLeftNav" />
+}
+
+<main id="main-content" role="main">
+
+    <div>
+        <govukHeadingH1 text="ErrorSummary" caption="Components"></govukHeadingH1>
+    </div>
+
+    @await Component.InvokeAsync("ExampleSection", new
+{
+    title = "Error Summary",
+    exampleCode = "<govukErrorSummary Id=\"test\">\n<govukErrorSummaryItem href=\"#\" text=\"Item One Error\"></govukErrorSummaryItem>\n</govukErrorSummary>",
+    componentName = "ErrorSummary",
+    componentArgs = new Dictionary<string, string>() {
+        {"Id","Test"},
+        {"ChildContent","<li><a href=\"#\">Item One Error</a></li>"},
+    }
+})
+
+
+    <div>
+        <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/error-summary/" class="govuk-link">GOV.UK Design System</a>.</p>
+    </div>
+
+</main>
