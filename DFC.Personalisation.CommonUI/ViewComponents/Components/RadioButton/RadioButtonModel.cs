@@ -7,5 +7,6 @@
         public string Value { get; set; }
         public string ChildContent { get; set; }
         public string Name { get; set; }
+        public bool Checked { get; set; }
     }
 }
