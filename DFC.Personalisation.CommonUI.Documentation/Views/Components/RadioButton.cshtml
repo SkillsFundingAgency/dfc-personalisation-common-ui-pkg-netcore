@@ -41,6 +41,24 @@
         }
     })
 
+    @await Component.InvokeAsync("ExampleSection", new
+{
+    title = "Radio Button with hint",
+    exampleCode = "<govukRadioButton Id=\"test\" value=\"yes\">\n" +
+                      "<govukRadioLabel Text=\"test\" For=\"test\"></govukRadioLabel>" +
+                      "\n<govukRadioHint Id=\"HintID\" hint-text=\"Hint\"></govukRadioHint>" +
+                      "\n</govukRadioButton>",
+    componentName = "RadioButton",
+    componentArgs = new Dictionary<string, string>() {
+            {"Id","TestBox"},
+            {"ChildContent","<label class=\"govuk-label govuk-radios__label\" for=\"TestBox\">\r\n    test\r\n</label>" +
+                            "<span class=\"govuk-hint govuk-radios__hint\">hint</span>"},
+            {"Value","Yes" },
+        {"checked", "true" }
+        }
+})
+
+
 
     <div>
         <p class="govuk-body">For details and usage instructions see <a href="https://design-system.service.gov.uk/components/radios/" class="govuk-link">GOV.UK Design System</a>.</p>
