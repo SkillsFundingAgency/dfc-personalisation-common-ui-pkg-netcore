@@ -25,9 +25,10 @@
     componentArgs = new Dictionary<string, string>() {
             {"Id","my-autocomplete-container"},
         {"Element", "my-autocomplete-container" },
-        {"ChildContent","<label class=\"govuk-heading-m\" for=\"TestBox\">\r\nSelect Country\r\n</label>"},
+        {"ChildContent","<span id=\"TextInputError\" class=\"govuk-error-message\">\r\n<span class=\"govuk-visually-hidden\">Error:</span>Error\r\n</span>\n<label class=\"govuk-heading-m\" for=\"TestBox\">\r\nSelect Country\r\n</label>"},
         {"Source", "countries" },
-        {"FunctionName", "AutoComplete1" }
+        {"FunctionName", "AutoComplete1" },
+        {"AdditionalClass", "govuk-form-group--error" }
         }
 })
 

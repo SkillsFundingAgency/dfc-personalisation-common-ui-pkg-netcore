@@ -25,6 +25,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         [TestCase(nameof(AutoCompleteModel.ShowAllValues), "True")]
         [TestCase(nameof(AutoCompleteModel.ShowNoOptionsFound), "True")]
         [TestCase(nameof(AutoCompleteModel.FunctionName), "name test")]
+        [TestCase(nameof(AutoCompleteModel.AdditionalClass), "name test")]
         public void WhenCheckBoxInvoked_ThenViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -60,7 +61,8 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 Required = true,
                 ShowAllValues = true,
                 OnConfirm = "",
-                Source = ""
+                Source = "",
+                AdditionalClass = ""
             };
             string id = componentTag.Id;
             bool autoSelect = componentTag.AutoSelect;
@@ -77,6 +79,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             bool showAllValues = componentTag.ShowAllValues;
             string onConfirm = componentTag.OnConfirm;
             string source = componentTag.Source;
+            string additionalClass = componentTag.AdditionalClass;
 
             await ViewComponentTestHelper.CallTagHelper("AutoComplete", tagHelper, componentTag);
         }
