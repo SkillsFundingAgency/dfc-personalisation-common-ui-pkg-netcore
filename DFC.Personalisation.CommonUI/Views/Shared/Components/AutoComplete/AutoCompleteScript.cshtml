@@ -3,7 +3,6 @@
     <script>
 
         function @Model.FunctionName () {
-        if (document.readyState === 'complete') {
 
             accessibleAutocomplete({
                 element: document.querySelector('#@Model.Element'),
@@ -20,8 +19,7 @@
                 require: @Model.Required.ToString().ToLower(),
                 showAllValues: @Model.ShowAllValues.ToString().ToLower(),
                 showNoOptionsFound: @Model.ShowNoOptionsFound.ToString().ToLower()
-            });
+            }
+            );
         }
-    }
-
     </script>
