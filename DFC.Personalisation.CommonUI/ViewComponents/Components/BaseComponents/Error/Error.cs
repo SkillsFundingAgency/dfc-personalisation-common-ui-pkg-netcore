@@ -36,4 +36,26 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
             return View($"/Views/Shared/Components/BaseComponents/Error/{_viewName}", _model);
         }
     }
+
+
+
+    [HtmlTargetElement("govukAutoCompleteError", ParentTag = "govukAutoComplete")]
+    public class AutoCompleteErrorTagHelper : OptionalParamTagHelper, IErrorAttributes
+    {
+        public string Text { get; set; }
+        public string Id { get; set; }
+        public string AdditionalClass { get; set; }
+
+        public AutoCompleteErrorTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
+        {
+        }
+    }
+
+    public class AutoCompleteError : Error
+    {
+        public AutoCompleteError() : base()
+        {
+
+        }
+    }
 }

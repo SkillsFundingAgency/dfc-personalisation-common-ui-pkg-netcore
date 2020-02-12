@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
 {
     [HtmlTargetElement("govukAutoComplete")]
-    [RestrictChildren("govukAutoCompleteLabel")]
+    [RestrictChildren("govukAutoCompleteLabel", "govukAutoCompleteError")]
 
-    public class AutoCompleteTagHelper : OptionalParamTagHelper, IAutoComplete {
+    public class AutoCompleteTagHelper : OptionalParamTagHelper, IAutoComplete
+    {
 
         public string Source { get; set; }
         public string Element { get; set; }
@@ -27,16 +28,17 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
         public bool ShowAllValues { get; set; }
         public bool ShowNoOptionsFound { get; set; }
         public string FunctionName { get; set; }
+        public string AdditionalClass { get; set; }
 
         public AutoCompleteTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
         {
-        
+
         }
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             await ProcessAsyncWithChildren(context, output, nameof(AutoCompleteModel.ChildContent));
         }
-       
+
     }
 
     public class AutoComplete : BaseViewComponent
@@ -50,32 +52,13 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
             _model = new AutoCompleteModel();
         }
 
-        
+
 
         public virtual IViewComponentResult Invoke(Dictionary<string, string> values)
         {
             _model.SetProps(values);
 
-            var model = new AutoCompleteModel
-            {
-                Source = _model.Source,
-                AutoSelect = _model.AutoSelect,
-                ConfirmOnBlur = _model.ConfirmOnBlur,
-                CssNameSpace = _model.CssNameSpace,
-                DefaultValue = _model.DefaultValue,
-                DisplayMenu = _model.DisplayMenu,
-                Element = _model.Element,
-                Id = _model.Id,
-                MinLength = _model.MinLength,
-                Name = _model.Name,
-                ShowNoOptionsFound = _model.ShowNoOptionsFound,
-                ShowAllValues = _model.ShowAllValues,
-                OnConfirm = _model.OnConfirm,
-                Required = _model.Required,
-                ChildContent = _model.ChildContent,
-                FunctionName = _model.FunctionName
-            };
-            return View($"/Views/Shared/Components/AutoComplete/{this._viewName}", model);
+            return View($"/Views/Shared/Components/AutoComplete/{this._viewName}", _model);
         }
     }
 }
