@@ -1,6 +1,6 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete.AutoCompleteModel
 
 @Html.Raw(@Model.ChildContent)
-<div id="@Model.Element"></div>
+<div class="@Model.AdditionalClass" id="@Model.Element"></div>
 
 @{ Html.RenderPartial("~/Views/Shared/Components/AutoComplete/AutoCompleteScript.cshtml", @Model);}

@@ -19,5 +19,6 @@
     
         public string ChildContent { get; set; }
         public string FunctionName { get; set; }
+        public string AdditionalClass { get; set; }
     }
 }

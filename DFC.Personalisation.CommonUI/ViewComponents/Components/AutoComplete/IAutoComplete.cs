@@ -1,6 +1,8 @@
-﻿namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
+﻿using DFC.Personalisation.CommonUI.Interfaces;
+
+namespace DFC.Personalisation.CommonUI.ViewComponents.Components.AutoComplete
 {
-    public interface IAutoComplete
+    public interface IAutoComplete : IAdditional
     {
         string Source { get; set; }
         string Element { get; set; }
