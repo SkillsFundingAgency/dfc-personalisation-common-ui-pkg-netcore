@@ -21,11 +21,13 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
                 Id = "Id",
                 Value = "Value",
                 AdditionalClass = "AdditionalClass",
-                Name = "Name"
+                Name = "Name",
+                Checked = true
             };
             string id = componentTag.Id;
             string value = componentTag.Value;
             string additionalClass = componentTag.AdditionalClass;
+            bool selected = componentTag.Checked;
 
             await ViewComponentTestHelper.CallTagHelper("RadioButton", tagHelper, componentTag);
         }
@@ -33,6 +35,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
         [TestCase(nameof(RadioButtonModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(RadioButtonModel.Value), "The Text Field has Been Set")]
         [TestCase(nameof(RadioButtonModel.Name), "The Text Field has Been Set")]
+        [TestCase(nameof(RadioButtonModel.Checked), "True")]
         public void WhenRadioButtonInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };

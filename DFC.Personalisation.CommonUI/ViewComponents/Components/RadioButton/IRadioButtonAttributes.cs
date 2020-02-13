@@ -6,5 +6,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton
     {
         string Value { get; set; }
         public string Name { get; set; }
+        public bool Checked { get; set; }
     }
 }

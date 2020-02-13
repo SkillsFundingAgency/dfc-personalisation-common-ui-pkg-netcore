@@ -15,6 +15,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
 
         [TestCase(nameof(ErrorSummaryModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(ErrorSummaryModel.ChildContent), "The Text Field has Been Set")]
+        [TestCase(nameof(ErrorSummaryModel.Hidden), "True")]
         public void WhenErrorSummaryInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -53,6 +54,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents
             var componentTag = new ErrorSummaryTagHelper(tagHelper)
             {
                 Id = "Id",
+                Hidden = true
             };
 
             await ViewComponentTestHelper.CallTagHelper("ErrorSummary", tagHelper, componentTag);

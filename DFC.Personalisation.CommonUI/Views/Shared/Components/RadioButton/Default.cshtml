@@ -1,6 +1,6 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.RadioButton.RadioButtonModel
 
     <div class="govuk-radios__item">
-        <input class="govuk-radios__input @Model.AdditionalClass" id="@Model.Id" name="@Model.Name" type="radio" value="@Model.Value">
+        <input class="govuk-radios__input @Model.AdditionalClass" id="@Model.Id" name="@Model.Name" type="radio" value="@Model.Value" @(Model.Checked ? "Checked": "")>
         @Html.Raw(@Model.ChildContent)
     </div>
