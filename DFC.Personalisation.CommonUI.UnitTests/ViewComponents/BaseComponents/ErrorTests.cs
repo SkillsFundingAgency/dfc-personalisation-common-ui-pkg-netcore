@@ -13,6 +13,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
         [TestCase(nameof(ErrorModel.Text), "The Text Field has Been Set")]
         [TestCase(nameof(ErrorModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(ErrorModel.AdditionalClass), "Additional Class")]
+        [TestCase(nameof(ErrorModel.Hidden), "True")]
         public void WhenErrorInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -46,6 +47,7 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
         [TestCase(nameof(ErrorModel.Text), "The Text Field has Been Set")]
         [TestCase(nameof(ErrorModel.Id), "The Text Field has Been Set")]
         [TestCase(nameof(ErrorModel.AdditionalClass), "Additional Class")]
+        [TestCase(nameof(ErrorModel.Hidden), "True")]
         public void WhenAutoCompleteErrorInvoked_TheViewModelIsUpdated(string key, string value)
         {
             var values = new Dictionary<string, string>() { { key, value } };
@@ -70,9 +72,11 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
             componentTag.AdditionalClass = "AdditionalClass";
             componentTag.Id = "Id";
             componentTag.Text = "ThisIsText";
+            componentTag.Hidden = true;
             string additionalClass = componentTag.AdditionalClass;
             string id = componentTag.Id;
             string text = componentTag.Text;
+            bool hidden = componentTag.Hidden;
 
             await ViewComponentTestHelper.CallTagHelper("AutoCompleteError", tagHelper, componentTag);
         }

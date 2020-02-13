@@ -9,6 +9,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
     public class ErrorTagHelper : OptionalParamTagHelper, IErrorAttributes
     {
         public string Text { get; set; }
+        public bool Hidden { get; set; }
         public string Id { get; set; }
         public string AdditionalClass { get; set; }
 
@@ -43,6 +44,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
     public class AutoCompleteErrorTagHelper : OptionalParamTagHelper, IErrorAttributes
     {
         public string Text { get; set; }
+        public bool Hidden { get; set; }
         public string Id { get; set; }
         public string AdditionalClass { get; set; }
 
