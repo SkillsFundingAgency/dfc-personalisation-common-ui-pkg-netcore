@@ -5,5 +5,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
     public interface IErrorAttributes: IAdditional, IHtmlBase
    {
        public string Text { get; set; }
+       public bool Hidden { get; set; }
     }
 }

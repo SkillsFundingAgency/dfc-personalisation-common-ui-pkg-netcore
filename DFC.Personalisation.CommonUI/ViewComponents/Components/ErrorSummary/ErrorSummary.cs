@@ -21,6 +21,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.ErrorSummary
         }
 
         public string Id { get; set; }
+        public bool Hidden { get; set; }
     }
 
     public class ErrorSummary : BaseViewComponent

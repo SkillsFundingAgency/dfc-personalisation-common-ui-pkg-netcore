@@ -5,5 +5,6 @@
         public string AdditionalClass { get; set; }
         public string Id { get; set; }
         public string Text { get; set; }
+        public bool Hidden { get; set; }
     }
 }
