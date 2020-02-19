@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Error
 {
-    [HtmlTargetElement("govukError", ParentTag = "govukTextInput")]
+    [HtmlTargetElement("govukError")]
     public class ErrorTagHelper : OptionalParamTagHelper, IErrorAttributes
     {
         public string Text { get; set; }
@@ -56,6 +56,27 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.
     public class AutoCompleteError : Error
     {
         public AutoCompleteError() : base()
+        {
+
+        }
+    }
+
+    [HtmlTargetElement("govukTextInputError", ParentTag = "govukTextInput")]
+    public class TextInputErrorTagHelper : OptionalParamTagHelper, IErrorAttributes
+    {
+        public string Text { get; set; }
+        public bool Hidden { get; set; }
+        public string Id { get; set; }
+        public string AdditionalClass { get; set; }
+
+        public TextInputErrorTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
+        {
+        }
+    }
+
+    public class TextInputError : Error
+    {
+        public TextInputError() : base()
         {
 
         }

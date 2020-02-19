@@ -80,5 +80,42 @@ namespace DFC.Personalisation.CommonUI.UnitTests.ViewComponents.BaseComponents
 
             await ViewComponentTestHelper.CallTagHelper("AutoCompleteError", tagHelper, componentTag);
         }
+
+        [TestCase(nameof(ErrorModel.Text), "The Text Field has Been Set")]
+        [TestCase(nameof(ErrorModel.Id), "The Text Field has Been Set")]
+        [TestCase(nameof(ErrorModel.AdditionalClass), "Additional Class")]
+        [TestCase(nameof(ErrorModel.Hidden), "True")]
+        public void WhenTextInputErrorTagHelperInvoked_TheViewModelIsUpdated(string key, string value)
+        {
+            var values = new Dictionary<string, string>() { { key, value } };
+
+            var component = new TextInputError();
+            component.ViewComponentContext = ViewComponentTestHelper.GetViewComponentContext();
+
+            ViewViewComponentResult result = component.Invoke(values) as ViewViewComponentResult;
+            ErrorModel resultModel = (ErrorModel)result.ViewData.Model;
+
+            //Assert
+            value.Should().Be(ViewComponentTestHelper.GetPropertyValue(resultModel, key));
+        }
+
+
+        [Test]
+        public async Task WhenTextInputErrorTagHelperCalled_ThenCorrectClassCalled()
+        {
+            var tagHelper = Substitute.For<IMockViewComponentHelper>();
+
+            var componentTag = new TextInputErrorTagHelper(tagHelper);
+            componentTag.AdditionalClass = "AdditionalClass";
+            componentTag.Id = "Id";
+            componentTag.Text = "ThisIsText";
+            componentTag.Hidden = true;
+            string additionalClass = componentTag.AdditionalClass;
+            string id = componentTag.Id;
+            string text = componentTag.Text;
+            bool hidden = componentTag.Hidden;
+
+            await ViewComponentTestHelper.CallTagHelper("TextInputError", tagHelper, componentTag);
+        }
     }
 }
