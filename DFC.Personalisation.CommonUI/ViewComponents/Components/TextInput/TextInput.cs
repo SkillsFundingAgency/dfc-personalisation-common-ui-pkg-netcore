@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
 {
     [HtmlTargetElement("govukTextInput")]
-    [RestrictChildren("govukHint", "govukError")]
+    [RestrictChildren("govukHint", "govukTextInputError")]
     public class TextInputTagHelper : OptionalParamTagHelper, ITextInputAttributes
     {
         public string Id { get; set; }
