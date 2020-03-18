@@ -1,6 +1,6 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.BaseComponents.Error.ErrorModel
 
 
-<span id="@Model.Id" class="govuk-error-message @Model.AdditionalClass" style="@(Model.Hidden ? "display: none;" : "")">
+<span id="@Model.Id" class="govuk-error-message @(Model.Hidden ? " govuk-visually-hidden" : "") @Model.AdditionalClass">
     <span class="govuk-visually-hidden">Error:</span>@Model.Text
 </span>
