@@ -8,5 +8,6 @@
         public string Value { get; set; }
         public string AdditionalClass { get; set; }
         public string Id { get; set; }
+        public bool Disabled { get; set; }
     }
 }

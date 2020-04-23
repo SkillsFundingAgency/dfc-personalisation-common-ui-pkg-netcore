@@ -3,3 +3,4 @@
 @Html.Raw(@Model.ChildContent)
 <div class="@Model.AdditionalClass" id="@Model.Element"></div>
 
+@{ Html.RenderPartial("~/Views/Shared/Components/AutoComplete/AutoCompleteScript.cshtml", @Model);}
