@@ -15,7 +15,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
         public string Value { get; set; }
         public string AdditionalClass { get; set; }
         public string Id { get; set; }
-        public bool disabled { get; set; }
+        public bool Disabled { get; set; }
 
         public CheckboxTagHelper(IViewComponentHelper viewComponentHelper)
             : base(viewComponentHelper)
