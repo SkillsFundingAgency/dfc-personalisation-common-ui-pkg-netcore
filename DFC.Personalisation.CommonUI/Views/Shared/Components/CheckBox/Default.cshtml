@@ -1,6 +1,6 @@
 ﻿@model DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox.CheckBoxModel
 <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input" id="@Model.Id" name="@Model.Name" type="checkbox" value="@Model.Value" @(Model.Checked?"checked":"")>
+    <input class="govuk-checkboxes__input" id="@Model.Id" name="@Model.Name" type="checkbox" value="@Model.Value" @(Model.Checked?"checked":"") @(Model.Disabled?"disabled":"")>
     <label class="govuk-label govuk-checkboxes__label" for="@Model.Id">
         @Model.Label
     </label>

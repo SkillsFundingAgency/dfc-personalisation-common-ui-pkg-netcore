@@ -8,5 +8,6 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.CheckBox
         bool Checked { get; set; }
         string Name { get; set; }
         string Value { get; set; }
+        bool Disabled { get; set; }
     }
 }
