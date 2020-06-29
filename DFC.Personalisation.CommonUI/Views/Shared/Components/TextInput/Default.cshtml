@@ -3,4 +3,4 @@
 
 @Html.Raw(Model.ChildContent)
 <input class="govuk-input @(Model.HasError?"govuk-input--error":"") @Model.AdditionalClass"
-       id="@Model.Id" name="@Model.Id" type="text" aria-describedby="@Model.Id-hint">
+       id="@Model.Id" name="@Model.Id" value="@Model.Value" type="text" aria-describedby="@Model.Id-hint">
