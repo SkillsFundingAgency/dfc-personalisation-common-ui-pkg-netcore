@@ -8,5 +8,6 @@
         public string ErrorMessage { get; set; }
         public string ChildContent { get; set; }
         public bool HasError { get; set; }
+        public string Value { get; set; }
     }
 }

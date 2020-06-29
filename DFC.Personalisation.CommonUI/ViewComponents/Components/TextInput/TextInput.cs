@@ -15,6 +15,7 @@ namespace DFC.Personalisation.CommonUI.ViewComponents.Components.TextInput
         public string ErrorMessage { get; set; }
         public bool HasError { get; set; }
         public string AdditionalClass { get; set; }
+        public string Value { get; set; }
 
         private readonly IViewComponentHelper _viewComponentHelper;
         public TextInputTagHelper(IViewComponentHelper viewComponentHelper) : base(viewComponentHelper)
