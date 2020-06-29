@@ -36,7 +36,9 @@
         componentName = "TextInput",
         componentArgs = new Dictionary<string, string>() { { "Text", "Start now" },
             {"ChildContent","<span id=\"TextInputError\" class=\"govuk-error-message\">\r\n<span class=\"govuk-visually-hidden\">Error:</span>Error\r\n</span>"},
-            {"HasError","True"} }
+            {"HasError","True"},
+            {"Value","My Text"}
+        }
     })
 
     @await Component.InvokeAsync("ExampleSection", new
@@ -62,7 +64,9 @@
             { "Text", "Delete account" },
             {"ChildContent","<span id=\"event-name-hint\" class=\"govuk-hint\">   test</span>" +
                             "<span id=\"TextInputError\" class=\"govuk-error-message\"><span class=\"govuk-visually-hidden\">Error:</span>Error\r\n</span>"},
-            {"HasError","True"}
+            {"HasError","True"},
+            {"Value","My Text"}
+
         }
     })
 
