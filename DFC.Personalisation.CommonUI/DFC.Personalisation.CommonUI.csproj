@@ -10,7 +10,7 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DFC.Personalisation.Common" Version="0.1.14" />
+    <PackageReference Include="DFC.Personalisation.Common" Version="0.1.28" />
   </ItemGroup>
 
 </Project>
