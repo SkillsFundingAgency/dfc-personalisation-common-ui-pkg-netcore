@@ -30,7 +30,6 @@ stages:
         BuildPlatform: 'any cpu'
         BuildConfiguration: 'release'
         TestSuffix: UnitTests
-        DotNetCoreVersion: '3.1.100'
 
     - task: NuGetToolInstaller@1
       inputs:
